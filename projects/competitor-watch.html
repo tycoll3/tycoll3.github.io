@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cincinnati competitor watch · Ty Collins</title>
+<meta name="description" content="An independent public-data watch on GECU and Cincinnati-area credit unions: rates, branches, NCUA call data, app reviews, and job posts.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/competitor-watch.html">
+<meta property="og:title" content="Cincinnati competitor watch · Ty Collins">
+<meta property="og:description" content="GECU and local peers, from public pages only. Branch coverage, app-review sentiment, rates, and call reports.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tycoll3.github.io/projects/competitor-watch.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cincinnati competitor watch · Ty Collins">
+<meta name="twitter:description" content="GECU and local peers, from public pages only. Branch coverage, app-review sentiment, rates, and call reports.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav aria-label="Primary"><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Oct 2026</p>
+    <h1>Cincinnati competitor watch</h1>
+    <p class="lede">How much of a competitive picture can be built from public pages alone? I watched General Electric Credit Union (GECU) and Cincinnati-area peers for three weeks. Rates, job posts, NCUA call data, app reviews, and branch coverage. Nothing was submitted, signed up for, or taken from inside GECU. This is an independent personal project, not GECU work product.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>A branch count does not say who lives near a branch. A star rating does not say what the written reviews are about. A rate without a date is not comparable. I wanted one read of a local market that kept those limits next to the numbers.</p>
+      <p>GECU is my employer. The peers I actually scored are Cinfed, Kemba (West Chester, not the Columbus credit union of the same name), Sharefax, Superior, and Wright-Patt. Fifth Third and First Financial show up as banks in the deposit data. I did not pull their rates. The same market is in the <a href="ai-search-visibility.html">AI search study</a>, which is a different project.</p>
+
+      <h2>How it works</h2>
+      <p>The study area is seven counties: Hamilton, Butler, Warren, and Clermont in Ohio, and Boone, Kenton, and Campbell in Kentucky. That is 503 census tracts, 2,089,394 residents (ACS 2020–2024, five-year), and 120 ZIP Code Tabulation Areas with at least half their land inside those counties.</p>
+      <ol class="flow" aria-label="Sources">
+        <li><b>Rates</b><span>Each institution's own pages, fetched Oct 7</span></li>
+        <li><b>Jobs</b><span>Careers boards, append-only log</span></li>
+        <li><b>Call report</b><span>NCUA, second quarter 2026</span></li>
+        <li><b>Reviews</b><span>App Store RSS and Google Play</span></li>
+        <li><b>Branches</b><span>Location pages, checked against NCUA</span></li>
+      </ol>
+      <p>Coverage uses straight-line distance from a tract's interior point to the nearest full-service branch, with a 3-mile threshold. I also computed 2 miles and 5 miles. "Gap" means none of these six credit unions, not an absence of banking. The FDIC Summary of Deposits for June 30, 2026 lists 542 bank branches in the seven counties. NCUA lists 111 credit-union sites there across all credit unions. Neither is counted as coverage.</p>
+      <p>Forty-six branches are in the coverage math: GECU 12, Kemba 11, Sharefax 9, Cinfed 7, Superior 4, Wright-Patt 3. Wright-Patt's locator is JavaScript-only, so its three local branches come from the NCUA file. Superior's count is the four inside the seven counties. The sentiment file notes that most of Superior's 25 branches are in northwest Ohio, so its app reviews cannot be split to Cincinnati.</p>
+      <p>I geocoded 50 sites in all, including ones I chose not to count. The Census geocoder matched 44. The other 6 were placed from the credit union's own coordinates, OpenStreetMap, or a third-party place point.</p>
+      <p>Reviews are written App Store and Google Play reviews from Oct 8, 2025 through Oct 8, 2026. A review is positive when a blend of stars and VADER is above 0.25, and negative when it is below −0.25. Wright-Patt had 537 reviews, so I drew a 200-review sample stratified by store (seed 42: 160 Google Play, 40 App Store). Yelp returned a 403. Google Maps review text needs a signed-in session. Branch reviews are not in this study.</p>
+      <p>Job posts were logged append-only from Oct 9 through Oct 28, 2026: 47 unique postings at five peer institutions, 190 rows, 33 flagged as tech or AI. Seven pulse snapshots of public pages were saved on Oct 9, 12, 14, 16, 23, 26, and 28.</p>
+
+      <h2>Results</h2>
+      <p>About a third of residents are more than 3 miles from all six. The gap is 728,861 people, 34.9%. At 2 miles the gap is 56.5%. At 5 miles it is 19.7%.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Class, 3-mile</th><th>Residents</th><th>Share</th><th>Pop-weighted avg of tract median income</th></tr>
+          <tr><td>Both GECU and at least one of the five</td><td>436,788</td><td>20.9%</td><td>$98.6k</td></tr>
+          <tr><td>GECU only</td><td>157,280</td><td>7.5%</td><td>$96.4k</td></tr>
+          <tr><td>One of the five, not GECU</td><td>766,465</td><td>36.7%</td><td>$78.6k</td></tr>
+          <tr><td>Neither (gap)</td><td>728,861</td><td>34.9%</td><td>$96.6k</td></tr>
+        </table>
+      </div>
+      <p>That income column is an average of medians, weighted by population. It is not a true median.</p>
+      <figure class="chart">
+        <img src="../assets/coverage-share.svg" width="760" height="360" alt="Horizontal bars showing the share of Greater Cincinnati residents within 3 miles of each credit union: Kemba 29.5 percent, GECU 28.4, Cinfed 25.1, Sharefax 18.1, Superior 12.3, Wright-Patt 10.1.">
+        <figcaption>Share of the 2,089,394 residents within 3 straight-line miles of that credit union's counted branches. Overlap is expected. Built Oct 8, 2026.</figcaption>
+      </figure>
+      <div class="table-wrap">
+        <table>
+          <tr><th>County</th><th>Within 3 mi of GECU</th><th>Within 3 mi of any of the five</th><th>Neither</th></tr>
+          <tr><td>Hamilton, OH</td><td>32.5%</td><td>81.8%</td><td>14.4%</td></tr>
+          <tr><td>Butler, OH</td><td>25.0%</td><td>23.6%</td><td>62.6%</td></tr>
+          <tr><td>Warren, OH</td><td>28.8%</td><td>51.9%</td><td>46.1%</td></tr>
+          <tr><td>Clermont, OH</td><td>24.2%</td><td>55.8%</td><td>39.0%</td></tr>
+          <tr><td>Boone, KY</td><td>48.6%</td><td>40.0%</td><td>39.8%</td></tr>
+          <tr><td>Kenton, KY</td><td>2.9%</td><td>57.4%</td><td>41.0%</td></tr>
+          <tr><td>Campbell, KY</td><td>32.4%</td><td>30.6%</td><td>42.7%</td></tr>
+        </table>
+      </div>
+      <p>Kenton is the sharp case. 2.9% of its residents are within 3 miles of a GECU branch, against 57.4% for the other five. Butler is the widest gap, at 62.6%.</p>
+
+      <p>Written app reviews, same window, stars blended with VADER. Wright-Patt is the 200-review sample. Its uncapped 537 reviews are close: 3.95 stars, 70% positive, 19% negative.</p>
+      <figure class="chart">
+        <img src="../assets/sentiment-bar.svg" width="760" height="430" alt="Stacked bar chart of positive, neutral, and negative written reviews. GECU 58, 17, and 25 percent. Kemba 44, 19, and 38. Cinfed 92 and 8. Wright-Patt 73, 10, and 17. Sharefax 18, 12, and 71. Superior 87, 7, and 6.">
+        <figcaption>Share of written reviews, Oct 8, 2025 – Oct 8, 2026. Kemba and Sharefax round to 101%. Superior is system-wide, not Cincinnati-only.</figcaption>
+      </figure>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Credit union</th><th>Written reviews</th><th>Avg stars</th><th>Positive / neutral / negative</th></tr>
+          <tr><td>GECU</td><td>105 (20 App Store / 85 Play)</td><td>3.53</td><td>58% / 17% / 25%</td></tr>
+          <tr><td>Kemba</td><td>16 (1 / 15)</td><td>2.94</td><td>44% / 19% / 38%</td></tr>
+          <tr><td>Cinfed</td><td>26 (9 / 17)</td><td>4.58</td><td>92% / 0% / 8%</td></tr>
+          <tr><td>Wright-Patt</td><td>200 of 537 (40 / 160)</td><td>4.03</td><td>73% / 10% / 17%</td></tr>
+          <tr><td>Sharefax</td><td>17 (6 / 11)</td><td>2.00</td><td>18% / 12% / 71%</td></tr>
+          <tr><td>Superior</td><td>82 (48 / 34)</td><td>4.49</td><td>87% / 7% / 6%</td></tr>
+        </table>
+      </div>
+      <p>Across all six, no negative review in the window was coded to fees or rates. Login and app reliability was the top praise theme and the top complaint theme at every institution. All-time store ratings sit above the written-review average. GECU's store-wide ratings that day were 4.77 on iOS (7,588 ratings) and 4.35 on Play (2,173), against a written-review average of 3.53.</p>
+      <p>Two timing notes, both on small counts. GECU's monthly average fell from 4.89 in Oct 2025 (9 reviews) and 4.83 in November to 3.36 in Jan 2026 and 2.27 in February. In January and February, 10 of 25 reviews were negative and 10 mention an update. Kemba launched a new platform around Sep 22, 2026. The five Google Play reviews after launch averaged 1.8 stars. The 12 reviews in the 12 months before launch averaged 3.25. Superior's 4.49 is not a steady year: 55 of the 82 reviews are dated Aug 12–13, 2026, and those days averaged 4.8 stars. Without those two days the remaining 27 reviews average 3.85 stars, and the split is 67% positive, 15% neutral, 19% negative.</p>
+
+      <p>Published rates, fetched Oct 7, 2026 from each institution's own pages. "As low as" or best tier. These are not offers, and several pages do not show a date.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Institution</th><th>12-month certificate</th><th>Auto, newest models</th><th>Date on the page</th></tr>
+          <tr><td>GECU</td><td>3.70% APY, $0.01 min</td><td>5.74% APR up to 48 mo / 5.90% up to 63 mo</td><td>Certificates 10/6/2026. Auto 7/28/2026.</td></tr>
+          <tr><td>Cinfed</td><td>4.00% APY, $500 min</td><td>5.740% APR up to 54 mo, autopay, 760+</td><td>Effective date did not render.</td></tr>
+          <tr><td>Kemba</td><td>3.75% APY, $500 min</td><td>5.39% APR up to 63 mo, 750+</td><td>Certificates 9/24/2026. Auto says 6/25/2025.</td></tr>
+          <tr><td>Sharefax</td><td>3.70% base to 3.95% Platinum, $500 min</td><td>5.99% up to 63 mo</td><td>Certificates 10/5/2026. Auto 7/31/2026.</td></tr>
+          <tr><td>Wright-Patt</td><td>3.75% APY, 12 to 17 months, $500 min</td><td>4.99% to 15.44% APR up to 63 mo</td><td>None shown.</td></tr>
+        </table>
+      </div>
+      <p>GECU's best checking yield on those pages was 0.45% APY. Cinfed's Summit checking was 6.00% APY on up to $10,000 when qualifications are met, and Kemba's Get Green was 4.00% APY on up to $15,000 with its own qualifications. GECU's HELOC headline was a 4.99% intro APR for 6 months.</p>
+
+      <p>NCUA call report, June 30, 2026, as compiled on Oct 7. Year-over-year is against June 30, 2025.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Institution</th><th>Assets</th><th>Members</th><th>Net worth ratio</th></tr>
+          <tr><td>GECU</td><td>$4.213B (−1.9%)</td><td>324,004 (+8.2%)</td><td>8.52%</td></tr>
+          <tr><td>Cinfed</td><td>$863.2M (+7.6%)</td><td>38,852 (+1.9%)</td><td>11.56%</td></tr>
+          <tr><td>Kemba</td><td>$1.740B (+0.7%)</td><td>130,948 (+1.6%)</td><td>11.68%</td></tr>
+          <tr><td>Sharefax</td><td>$720.8M (+37.7%)</td><td>41,170 (+27.3%)</td><td>9.82%</td></tr>
+          <tr><td>Wright-Patt</td><td>$9.549B (+2.1%)</td><td>527,080 (−0.1%)</td><td>11.32%</td></tr>
+        </table>
+      </div>
+      <p>Sharefax's member and asset jumps are mostly its 2025 merger with Emery, not a like-for-like gain. On a combined basis, assets were about flat and members were down. GECU's 8.52% net worth ratio was the lowest of these five. Its member growth was the highest that was not merger-driven.</p>
+      <p>Fifth Third was number two in Cincinnati MSA deposits in a June 2026 CharterBench cut, at 24.34% with 93 branches. First Financial was number four, at 3.56% with 46 branches. I treated both as context. Fifth Third is a national-scale bank headquartered in Cincinnati, and First Financial's certificate page asked for a ZIP before it showed a rate, so I did not copy a third-party rate.</p>
+
+      <h2>A decision I changed</h2>
+      <p>I first put every site I could find on the map, including lobbies that are not full-service branches. I then took them out of the coverage math. GECU's Evendale plant office is restricted to plant employees. Cinfed has three interactive-teller sites that are not branches. Kemba had announced a South Lebanon move that was not open yet, so I kept the current site.</p>
+      <p>I checked the consequence. Counting Cinfed's three teller-only sites moves the gap from 34.9% to 34.7%. They stay off the branch count. They can still be drawn on a map.</p>
+
+      <h2>Status</h2>
+      <p>The watch ran from Oct 7 through Oct 28, 2026. The pulse snapshots stopped on Oct 28. It is not a live product, and it is not scheduled.</p>
+
+      <h2>Open questions</h2>
+      <ul>
+        <li>Distance is straight-line, not drive time. The Ohio River makes some 3-mile links longer in a car.</li>
+        <li>Kemba (16), Sharefax (17), and Cinfed (26) are too small for a firm ranking. One review moves their percentages by several points.</li>
+        <li>App reviews are people who had something to say about an app, not a member survey. Some reviewers may not be members.</li>
+        <li>Cinfed's rate page had a blank effective date, Wright-Patt showed none, and Kemba's auto rate was dated June 25, 2025. Rate comparison is fragile until those dates exist.</li>
+        <li>Greater Cincinnati Credit Union appears in a public roundup. I did not fetch it. First Financial's own certificate rate was not on the page without a ZIP.</li>
+      </ul>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Question, sources, and what counted. Built with coding agents.</dd>
+        <dt>What it is</dt><dd>Independent. Public data only. Not GECU work product.</dd>
+        <dt>Area</dt><dd>7 counties, 503 tracts, 2,089,394 residents</dd>
+        <dt>Branches counted</dt><dd>46 full-service, of 50 sites placed</dd>
+        <dt>Tools</dt><dd>Python, Census geocoder, VADER, NCUA and FDIC public files</dd>
+        <dt>Status</dt><dd>Finished Oct 28, 2026</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

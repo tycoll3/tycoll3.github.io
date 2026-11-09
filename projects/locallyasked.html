@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocallyAsked · Ty Collins</title>
+<meta name="description" content="A paused test of a paid AI-visibility report for local shops in Cincinnati. The useful part is the findings I withdrew when they did not reproduce.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/locallyasked.html">
+<meta property="og:title" content="LocallyAsked · Ty Collins">
+<meta property="og:description" content="A frozen validation study. $99 a month was the offer. Nobody was contacted. Findings that did not reproduce were withdrawn.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tycoll3.github.io/projects/locallyasked.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LocallyAsked · Ty Collins">
+<meta name="twitter:description" content="A frozen validation study. $99 a month was the offer. Nobody was contacted. Findings that did not reproduce were withdrawn.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav aria-label="Primary"><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · paused Oct 28, 2026</p>
+    <h1>LocallyAsked</h1>
+    <p class="lede">A fast test of whether a local shop in Cincinnati would pay monthly for a report on how AI assistants name them, plus written fixes. It never launched. The part worth keeping is the list of findings I withdrew when they did not reproduce.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>Plumbers, HVAC shops, and roofers get named, mis-named, or left out when someone asks an AI who to call. The question I actually needed answered was narrower than the product. Would an owner pay, and pay again the next month?</p>
+      <p>I set the frame before building: a real offer, tested cheaply, with no savings put in. The product name was not final. LocallyAsked is the name I use for the case study. An earlier one-shot idea, at $49, was paused on Oct 20, 2026.</p>
+
+      <h2>How it works</h2>
+      <p>The designed product, which was never sold, was a monthly report on 20 fixed local questions. The same 20, reused exactly, so a week could be compared with the next one. Fixes first, a score second. The working price was $99 a month, cancel anytime, with no refund for the current month.</p>
+      <ol class="flow" aria-label="Evidence rule">
+        <li><b>20 questions</b><span>Fixed and reused</span></li>
+        <li><b>Capture</b><span>A recorded location pin</span></li>
+        <li><b>One row</b><span>The evidence is stored</span></li>
+        <li><b>Finding</b><span>Only if that row can rebuild it</span></li>
+        <li><b>Verdict</b><span>Test first, or don't build</span></li>
+      </ol>
+      <p>Two method rules sat on top of that. Don't compare captures taken at different location pins. Don't put a consumer-app label on a finding that came from a synthesis.</p>
+      <p>A second-hand reading of Census County Business Patterns for 2023, through a third-party guide, counted 1,186 home-service establishments in Cincinnati. That is a pool size, not a prospect list. I did not contact anyone.</p>
+
+      <h2>Results</h2>
+      <p>The first week of captures, before any outreach:</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Check</th><th>Result</th></tr>
+          <tr><td>Browser capture</td><td>80 rows. Google AI Overview: 18 captured and 2 absent. ChatGPT: 20 of 20. Two other surfaces: 0 of 20.</td></tr>
+          <tr><td>Agent search</td><td>20 of 20 answered. 68 businesses named in answers, 55 in the control links, 85 combined, 38 in both.</td></tr>
+          <tr><td>Noise test</td><td>3 plumbing questions × 5 repeats on one Google AI surface. 15 of 15 answered.</td></tr>
+          <tr><td>Other products</td><td>3 priced tools from $41 to $197 a month, plus a $79 one-time check.</td></tr>
+          <tr><td>Outreach, replies, paid</td><td>0, 0, 0</td></tr>
+        </table>
+      </div>
+      <p>The stress test's verdict was test first. The risky assumption is that someone pays $99 and pays again in month two. A dashboard on its own was not worth $99. Fixes were the product. That assumption is still untested, because outreach never started.</p>
+      <p>Five findings were withdrawn as unreliable:</p>
+      <ul>
+        <li>A brunch result that showed no overlap between two lists.</li>
+        <li>A phantom citation.</li>
+        <li>A claim that "the surface comes and goes."</li>
+        <li>A hold rate for how answers rotate.</li>
+        <li>"We measure ChatGPT." From the machine, that check answered 2 of 15.</li>
+      </ul>
+      <p>Three findings survived, each tied to a stored row: conflicting phone numbers for one shop, a review count that mixed two platforms for the same shop, and instability that showed up on one question rather than on a whole surface. I am not naming the shops.</p>
+
+      <h2>A decision I changed</h2>
+      <p>I had been treating a repeated synthesis as a finding. The rule I added is stricter. A finding has to be reconstructible from one stored row, or it is an open question. That rule knocked out three versions of a claim. I left the withdrawn lines in the record, next to the correction, instead of deleting them.</p>
+
+      <h2>Status</h2>
+      <p>Paused on Oct 28, 2026. Paused is not cancelled. The files stay, and the offer was never sent. There are no customers. The agents that were built to sell it are paused too, which is noted on the <a href="team-tyler.html">team page</a>.</p>
+
+      <h2>Open questions</h2>
+      <ul>
+        <li>Would anyone say yes to $99, and would they pay in month two? That is the first untested fact.</li>
+        <li>The name was not settled.</li>
+        <li>The two method rules still bind any restart: same location pin, and no consumer-app label on a synthesis.</li>
+      </ul>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>The offer, the hold on outreach, and which findings stood.</dd>
+        <dt>Place</dt><dd>Cincinnati</dd>
+        <dt>Designed price</dt><dd>$99 a month. Never charged.</dd>
+        <dt>Questions</dt><dd>20, fixed</dd>
+        <dt>Customers</dt><dd>None. Outreach was 0.</dd>
+        <dt>Status</dt><dd>Paused Oct 28, 2026. Not cancelled.</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

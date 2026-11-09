@@ -12,6 +12,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+.skip { position: absolute; left: 12px; top: 12px; transform: translateY(-160%); background: var(--accent); color: var(--bg); padding: 8px 14px; z-index: 20; border-radius: 6px; font-weight: 600; text-decoration: none; }
+.skip:focus { transform: none; outline: 2px solid var(--ink); outline-offset: 2px; }
 a { color: var(--accent); text-underline-offset: 3px; }
 img, svg { max-width: 100%; }
 .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
@@ -45,7 +47,9 @@ section { padding: 44px 0; border-top: 1px solid var(--line); }
 
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 24px; color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
-.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card.plain { cursor: default; }
+.spaced { margin-top: 36px; }
 .card p { color: var(--muted); font-size: 16px; }
 .card .more { margin-top: auto; color: var(--accent); font-weight: 600; font-size: 15px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; padding: 0; list-style: none; }
@@ -86,6 +90,10 @@ table { width: 100%; border-collapse: collapse; font-size: 15px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font: 12px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 .note { background: var(--accent-soft); border-radius: 8px; padding: 14px 16px; font-size: 15px; }
+figure.chart { margin: 18px 0 8px; }
+figure.chart img { display: block; width: 100%; height: auto; background: #f7f5f0; border: 1px solid var(--line); border-radius: 10px; }
+figure.chart figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+code { font-family: var(--mono); font-size: 0.92em; }
 .demo-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
 
 footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
