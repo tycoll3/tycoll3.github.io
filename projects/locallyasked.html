@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocallyAsked · Ty Collins</title>
+<meta name="description" content="A paused validation test of a $99 monthly AI-visibility report for local home-service businesses, including findings withdrawn when they did not reproduce.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/locallyasked.html">
+<meta property="og:title" content="LocallyAsked · Ty Collins">
+<meta property="og:description" content="A paused validation test of a $99 monthly AI-visibility report for local home-service businesses, including findings withdrawn when they did not reproduce.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tycoll3.github.io/projects/locallyasked.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins, AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LocallyAsked · Ty Collins">
+<meta name="twitter:description" content="A paused validation test of a $99 monthly AI-visibility report for local home-service businesses, including findings withdrawn when they did not reproduce.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · paused Oct 28, 2026</p>
+    <h1>LocallyAsked</h1>
+    <p class="lede">A short test of whether a local home-service business would pay for a monthly report on how AI assistants answer questions about their trade. I paused it. The findings that did not reproduce stay in the record.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>A plumber, an HVAC shop, or a roofer can be named, misnamed, or left out when someone asks an AI. The question I actually needed answered was whether an owner would pay monthly for a report and for written fixes. I wanted a real offer, tested cheaply, before any more building.</p>
+
+      <h2>How it works</h2>
+      <p>The offer, written down and never launched: a monthly report on 20 fixed local questions, with the errors first and a score second. The price was $99 a month, cancel anytime, with no refund for the current month. LocallyAsked is the working name. I had not picked a final one.</p>
+      <ol class="flow" aria-label="Validation steps">
+        <li><b>20 questions</b><span>Fixed, and reused exactly</span></li>
+        <li><b>Capture</b><span>AI surfaces, one stored row each</span></li>
+        <li><b>One-row rule</b><span>A finding has to rebuild from that row</span></li>
+        <li><b>Verdict</b><span>Test the offer before building more</span></li>
+      </ol>
+      <p>Two method rules sat next to the one-row rule. I don't compare captures that used different location pins. A synthesized finding does not get labeled as a specific consumer app.</p>
+
+      <h3>What I actually ran</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Check</th><th>Result</th></tr>
+          <tr><td>Week-1 browser capture</td><td>80 rows. One Google AI surface: 18 captured and 2 absent. ChatGPT: 20 of 20. Two other surfaces: 0 of 20.</td></tr>
+          <tr><td>Week-1 agent search</td><td>20 of 20 answered. 68 businesses named in the answers, 55 in the control links, 85 combined, 38 in both.</td></tr>
+          <tr><td>Noise test</td><td>3 plumbing questions, 5 repeats each, on one Google AI surface. 15 of 15 answered.</td></tr>
+          <tr><td>Priced products already in market</td><td>Three, from $41 to $197 a month, plus a $79 one-time check.</td></tr>
+          <tr><td>Outreach, replies, paid</td><td>0, 0, and 0.</td></tr>
+        </table>
+      </div>
+
+      <h3>What I withdrew</h3>
+      <p>These were written up, then pulled, because a second look could not rebuild them or they did not reproduce. The wrong lines stay in the notes next to the correction.</p>
+      <ul>
+        <li>A brunch question where two answer surfaces named no businesses in common.</li>
+        <li>A citation whose source was not in the stored row.</li>
+        <li>A claim that "the surface comes and goes."</li>
+        <li>A measured rate for how long an answer stayed put.</li>
+        <li>A line that said the study measured ChatGPT. On the machine I used, that surface answered 2 of 15.</li>
+      </ul>
+      <p>Three findings survived the one-row rule. One stored row showed two different phone numbers for the same shop. One shop's review count mixed two platforms. One question's answers moved across repeats.</p>
+      <p>The stress test came back TEST FIRST. The fixes were the product. A dashboard on its own was not worth $99.</p>
+      <p class="note">This was a validation test. The offer was never launched. It has no customers. I contacted no one.</p>
+
+      <h2>A decision I changed</h2>
+      <p>I paused an earlier $49 one-time offer on Oct 20, then wrote the $99 monthly offer, then paused that too on Oct 28. The files stay. The offer was never launched.</p>
+      <p>The harder change was the findings. I had treated the five claims above as results. When they failed the one-row rule, I took them out of the conclusion and left the retraction visible. A clean story would have been the easier edit.</p>
+
+      <h2>Status</h2>
+      <p>Paused on Oct 28, 2026. The evidence file is there for whoever picks it up, including me. Nothing is for sale.</p>
+
+      <h2>Open questions</h2>
+      <p>The untested fact is whether anyone says yes to $99 and pays again the next month. Outreach stayed at zero on purpose, until the offer was final and I lifted the hold. The name is still unsettled.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>I set the offer, the one-row rule, and the hold on outreach. The stress test filed a verdict. I decided.</dd>
+        <dt>Tools</dt><dd>Agent web search, headless browser captures, a row-level evidence file</dd>
+        <dt>Offer</dt><dd>$99 a month, never launched. Outreach 0.</dd>
+        <dt>Status</dt><dd>Paused Oct 28, 2026</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

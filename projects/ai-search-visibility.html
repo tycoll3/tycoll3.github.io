@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI search visibility · Ty Collins</title>
+<meta name="description" content="A method study: 383 web-searching AI answers scored on a four-step ladder. Location on the question changes whether a local institution is named.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/ai-search-visibility.html">
+<meta property="og:title" content="AI search visibility · Ty Collins">
+<meta property="og:description" content="A method study: 383 web-searching AI answers scored on a four-step ladder. Location on the question changes whether a local institution is named.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tycoll3.github.io/projects/ai-search-visibility.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins, AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI search visibility · Ty Collins">
+<meta name="twitter:description" content="A method study: 383 web-searching AI answers scored on a four-step ladder. Location on the question changes whether a local institution is named.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Oct 2026</p>
+    <h1>AI search visibility</h1>
+    <p class="lede">A method for measuring whether web-searching AI models name a local institution. I scored 383 answers on a four-step ladder. Asking from a location, versus not, changed whether that institution was named at all.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>People ask an AI for a local recommendation and get a short list back. I wanted a cheap, repeatable way to see whether one local institution lands on that list, and whether the asker's location changes the answer. I didn't have a method I trusted, so I wrote one down before the run and then followed it.</p>
+
+      <h2>How it works</h2>
+      <p>Each run sends a locked list of questions to models through OpenRouter, with web search on and no system prompt. Every call saves the answer, the sources, and the cost. The institution is hand-scored. A script checks that every quote I kept is a substring of the answer.</p>
+      <ol class="flow" aria-label="Study steps">
+        <li><b>Questions</b><span>A locked list, discovery and brand</span></li>
+        <li><b>Two versions</b><span>Located, and the same words with no place</span></li>
+        <li><b>Models</b><span>OpenRouter, web search on</span></li>
+        <li><b>Score</b><span>The ladder, then an exact-quote check</span></li>
+      </ol>
+      <p>The located version says where the asker is, and sets a location parameter when the model supports one. The unlocated version is the same words with no place anywhere. Discovery questions do not name the institution. Brand questions do.</p>
+
+      <h3>The ladder</h3>
+      <p>The strongest rung wins for each institution in each answer.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Rung</th><th>What it means</th></tr>
+          <tr><td>Recommended</td><td>On the answer's own short list or pick list</td></tr>
+          <tr><td>Cited</td><td>Its site is a source link, and it was not recommended</td></tr>
+          <tr><td>Mentioned</td><td>Named, and nothing stronger</td></tr>
+          <tr><td>Absent</td><td>Not named</td></tr>
+        </table>
+      </div>
+
+      <h3>The runs</h3>
+      <p>A short first check on Oct 7 used one engine for the AI answers. It is not part of the 383. The scored answers are the next two runs. Each run is a new baseline, not a point on a trend.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Run</th><th>What I sent</th><th>Answers</th><th>Spend</th></tr>
+          <tr><td>Oct 8</td><td>8 models × 15 questions × 2 versions (located and unlocated)</td><td>233 of 240. Seven calls failed, all from one model that wrote its search call as plain text. 437 attempts.</td><td>$9.09</td></tr>
+          <tr><td>Oct 12</td><td>5 models × 30 questions, every prompt located</td><td>150 of 150</td><td>$9.08</td></tr>
+          <tr><td>Scored total</td><td>OpenRouter, web search on</td><td>383</td><td>about $18.90 for the three runs</td></tr>
+        </table>
+      </div>
+
+      <h3>What came back</h3>
+      <p>On the Oct 8 discovery questions, the institution was recommended in 41 of 87 located answers and in 0 of 85 unlocated answers. The same questions with no location produced essentially none of the local names. Putting a place on the question changed whether a local institution was named at all.</p>
+      <p>The models did not agree with each other. On those located discovery questions, the recommended rate ran from 0% to 91% depending on the model.</p>
+      <p class="note">Limits, stated with the result: these are API models with web search, one answer per question. They are not the signed-in consumer apps. Location only reaches models that have built-in search. On Oct 12, 48 of 150 answers hit the token cap, so those replies are shorter than the model would have written.</p>
+
+      <h2>A decision I changed</h2>
+      <p>The Oct 7 check scored AI answers from one engine. Before Oct 8 I changed the method: several models, and two versions of every question, so the location effect isn't mixed up with the wording. The spread that came back, 0% to 91%, is why a single-model test would have been a different study.</p>
+      <p>One model returned blank answers at a 600-token cap. I raised the cap to 1,500 for that model only, and left the others where they were.</p>
+      <p>The study also got its own API key with a hard spend cap, after a shared key had already hit a monthly limit mid-run. The script stops before a call would cross the cap.</p>
+
+      <h2>Status</h2>
+      <p>Complete. The runs were Oct 7, Oct 8, and Oct 12, 2026. Nothing is scheduled.</p>
+
+      <h2>Open questions</h2>
+      <p>A weekly repeat, three passes a week on a small panel, was sketched and not approved. Until that exists, I don't have a trend. I also haven't rerun the 48 answers that hit the token cap.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>I wrote the question list, the ladder, and the limits, and I scored the subject institution.</dd>
+        <dt>Tools</dt><dd>Python, OpenRouter, the OpenAI client</dd>
+        <dt>Sample</dt><dd>383 scored answers. Oct 8: 233. Oct 12: 150.</dd>
+        <dt>Status</dt><dd>Complete</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

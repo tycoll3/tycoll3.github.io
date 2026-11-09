@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitor watch · Ty Collins</title>
+<meta name="description" content="A public-data watch on six institutions in a metro market: rates, jobs, call reports, app reviews, and branch coverage.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/competitor-watch.html">
+<meta property="og:title" content="Competitor watch · Ty Collins">
+<meta property="og:description" content="A public-data watch on six institutions in a metro market: rates, jobs, call reports, app reviews, and branch coverage.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tycoll3.github.io/projects/competitor-watch.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins, AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Competitor watch · Ty Collins">
+<meta name="twitter:description" content="A public-data watch on six institutions in a metro market: rates, jobs, call reports, app reviews, and branch coverage.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Oct 2026</p>
+    <h1>Competitor watch</h1>
+    <p class="lede">A learning project: how much of a competitive picture can be built from public data alone. Six institutions in a metro market. Rates, jobs, call reports, app reviews, and branch coverage. Read-only.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>I wanted one read of a market that I could rebuild from public pages and public filings. The rule for the whole project: nothing submitted, nothing signed up for, and no one contacted.</p>
+
+      <h2>How it works</h2>
+      <p>Six institutions, kept as a set. Each source is saved with the date it was fetched. Old rows in the jobs log are never rewritten, so a change can be shown from the file.</p>
+      <ol class="flow" aria-label="Data sources">
+        <li><b>Rates</b><span>Published pages, with the fetch date</span></li>
+        <li><b>Jobs</b><span>Careers boards, append-only log</span></li>
+        <li><b>Filings</b><span>NCUA call report, Q2 2026</span></li>
+        <li><b>Reviews</b><span>App stores, 12 months of text</span></li>
+        <li><b>Branches</b><span>Coverage, not a raw tally</span></li>
+      </ol>
+      <ul>
+        <li><b>Reviews.</b> iOS and Android reviews from Oct 2025 through Oct 2026, coded by stars, a sentiment score, and theme patterns. Where one feed was much larger, I drew a stratified random sample with a fixed seed, then checked it against the uncapped set. The two reads were nearly the same.</li>
+        <li><b>Branches.</b> Full-service sites were geocoded. About 9 in 10 matched through the Census geocoder, and the rest were placed from other public sources. Coverage is straight-line distance to the nearest branch, at 3 miles, with the same check rerun at 2 and 5 miles.</li>
+        <li><b>Jobs.</b> 47 unique postings in an append-only log of 190 rows, first seen Oct 9 and last seen Oct 28. 33 rows were flagged as tech or AI work.</li>
+        <li><b>Pulse.</b> Seven dated snapshots between Oct 9 and Oct 28, so a page diff has a before and an after.</li>
+      </ul>
+      <p>A few things showed up without naming anyone. In that 12-month window, no negative review across the six was coded to fees or rates. Login and reliability dominated the app-review text at every institution. A platform migration at one institution showed up as a rating drop within days, and the snapshots caught it. Coverage gaps cluster, so a branch tally on its own misses who is far from a branch. Rate pages often leave off the effective date, which makes a rate comparison fragile.</p>
+      <p class="note">Store reviews are only the people who wrote one. Branch reviews are not in the set. Theme labels were spot-checked, not hand-coded on every review.</p>
+
+      <h2>A decision I changed</h2>
+      <p>One rate page showed an unfilled template where the effective date should have been. I was about to infer the date from the fetch. I recorded "date not rendered" instead, and left the date blank.</p>
+      <p>Yelp blocked the automated fetch, and Maps text needs a signed-in session. I left branch reviews out. Working around the block would have broken the read-only rule.</p>
+
+      <h2>Status</h2>
+      <p>The watch ran from Oct 7 to Oct 28, 2026. The pulse stopped on Oct 28. Nothing is running.</p>
+
+      <h2>Open questions</h2>
+      <p>The theme codes are a first pass. A hiring brief drafted near the end of the month was not finished. I have not decided whether a later pulse is worth running.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>I set the source list, the coverage rule, and what had to stay out of the write-up.</dd>
+        <dt>Tools</dt><dd>Python, pandas, public filings, app-store feeds, Census geocoder</dd>
+        <dt>Window</dt><dd>Oct 7 to Oct 28, 2026. Seven pulse snapshots.</dd>
+        <dt>Status</dt><dd>Stopped Oct 28</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

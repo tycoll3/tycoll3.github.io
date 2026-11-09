@@ -4,6 +4,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Big Eastagami</title>
+	<meta name="description" content="Every final score in Big East basketball history, as a scorigami map.">
+	<link rel="canonical" href="https://tycoll3.github.io/demos/big-eastagami.html">
+	<meta property="og:title" content="Big Eastagami · Ty Collins">
+	<meta property="og:description" content="Every final score in Big East basketball history, as a scorigami map.">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://tycoll3.github.io/demos/big-eastagami.html">
+	<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Ty Collins, AI and analytics engineering">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Big Eastagami · Ty Collins">
+	<meta name="twitter:description" content="Every final score in Big East basketball history, as a scorigami map.">
+	<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 	<style>
 		:root {
@@ -315,11 +329,14 @@
 			font-size:9px; color:#2a3a50; letter-spacing:1px;
 			border-top:1px solid var(--border);
 		}
+		.skip { position: absolute; left: 12px; top: 8px; padding: 8px 14px; background: #fff; color: #111; font: 600 14px/1 sans-serif; text-decoration: none; border-radius: 6px; z-index: 50; transform: translateY(calc(-100% - 24px)); }
+		.skip:focus { transform: none; }
 	</style>
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 
-<div class="header">
+<div class="header" id="content">
 	<div class="eyebrow">Big East Conference Basketball · 2013–Present</div>
 	<h1>
 		<span class="big">BIG</span><br>
