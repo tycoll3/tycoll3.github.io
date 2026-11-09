@@ -8,6 +8,9 @@ Plain HTML and CSS. No build step, no packages, no trackers.
 - `projects/` — one case study page per project
 - `demos/` — the two Scorigami maps, copied from the Scorigami project's output
 - `assets/style.css` — all styling, with light and dark themes
+- `assets/og.png` — share image
+- `404.html` — missing-page page, in the same style
+- `robots.txt`, `sitemap.xml`
 
 ## Preview on this PC
 

@@ -5,13 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Multi-agent trading system · Ty Collins</title>
 <meta name="description" content="An AI fund manager trades a small live-money account under a written rulebook, reviewed by a board of six models.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/trading-system.html">
+<meta property="og:title" content="Multi-agent trading system · Ty Collins">
+<meta property="og:description" content="An AI fund manager trades a small live-money account under a written rulebook, reviewed by a board of six models.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tycoll3.github.io/projects/trading-system.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Multi-agent trading system · Ty Collins">
+<meta name="twitter:description" content="An AI fund manager trades a small live-money account under a written rulebook, reviewed by a board of six models.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav aria-label="Primary"><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
 
-<main class="wrap">
+<main id="content" class="wrap">
   <div class="case-head">
     <p><a class="back" href="../#projects">← All projects</a></p>
     <p class="eyebrow">Personal project · Sep 2026 – present</p>
@@ -23,7 +37,7 @@
     <article class="prose">
       <h2>The question</h2>
       <p>I wanted to know what it takes to let an AI agent act with real money and still trust the result. Paper trading doesn't answer that, because nothing is at stake. So I set up a small real account and built the controls around it.</p>
-      <p>This is an experiment in governance and engineering. It isn't investment advice, and it isn't a fund that takes anyone else's money.</p>
+      <p>This is an experiment in governance and engineering. It isn't investment advice, and it isn't a fund that takes anyone else's money. The public site is <a href="collins-capital.html">Collins Capital</a>.</p>
 
       <h2>How it's organized</h2>
       <p>The system has three roles, modeled on how a real fund separates them.</p>
@@ -62,7 +76,7 @@
         </table>
       </div>
       <p>The vote answers one question: does the owner need to step in? There are three possible answers, from "no owner action" to "urgent owner review." Poor performance alone can't trigger the urgent vote. Only a rule breach or a control failure can.</p>
-      <p>Every memo ends with an action register, and the next meeting starts by reviewing it. A full meeting costs about $1.65 in model usage.</p>
+      <p>Every memo ends with an action register, and the next meeting starts by reviewing it. A full meeting costs about $1 or less per meeting in model usage.</p>
 
       <h2>Rules that keep it honest</h2>
       <ul>
@@ -76,7 +90,7 @@
       <p>Before anything leaves my machine, account numbers and order IDs are replaced with stable labels such as <code>[order-1]</code>, so a model can refer to the same order in both rounds without seeing the real ID. A second check scans the outgoing text and stops the send if anything remains. Each request also tells the provider not to retain the data.</p>
 
       <h2>The desk display</h2>
-      <p>A companion project shows the account on a 7-inch screen driven by a Raspberry Pi Zero 2 W. It reads the account through a read-only connection and can't trade.</p>
+      <p>A companion project, the <a href="desk-display.html">desk display</a>, shows the account on a 7-inch screen driven by a Raspberry Pi Zero 2 W. It reads the account through a read-only connection and can't trade.</p>
       <ul>
         <li>A privacy view shows percentages only, for when other people are nearby.</li>
         <li>When a number isn't available, the screen says so and never substitutes sample data.</li>
@@ -84,10 +98,10 @@
       </ul>
 
       <h2>Testing</h2>
-      <p>The board has 25 automated tests that run on fake files and a fake model client, so they need no network, no API key and no real account data. The desk display has its own test suite covering the privacy view, missing values and market hours.</p>
+      <p>The board has 25 automated tests that run on fake files and a fake model client, so they need no network, no API key and no real account data. The <a href="desk-display.html">desk display</a> has 60 tests. Its suite covers the privacy view, missing values and market hours.</p>
 
       <h2>Still open</h2>
-      <p>The desk display hasn't been through a 24-hour run on the physical Pi yet, and it still needs a reliable source for historical performance.</p>
+      <p>The <a href="desk-display.html">desk display</a> hasn't been through a 24-hour run on the physical Pi yet, and it still needs a reliable source for historical performance.</p>
     </article>
 
     <aside>
@@ -101,6 +115,6 @@
   </div>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
 </body>
 </html>

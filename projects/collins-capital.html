@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collins Capital · Ty Collins</title>
+<meta name="description" content="Collins Capital is the public site for a small fund I run with my own money. It rebuilds daily from the trading journal, and the build fails if a figure doesn't match.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/collins-capital.html">
+<meta property="og:title" content="Collins Capital · Ty Collins">
+<meta property="og:description" content="A public fund site rebuilt daily from a trading journal, with leak checks, a data-match gate, and 279 tests.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tycoll3.github.io/projects/collins-capital.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Collins Capital · Ty Collins">
+<meta name="twitter:description" content="A public fund site rebuilt daily from a trading journal, with leak checks, a data-match gate, and 279 tests.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav aria-label="Primary"><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Sep 2026 – present</p>
+    <h1>Collins Capital</h1>
+    <p class="lede">The public site for a small fund I run with my own money. It rebuilds every day from the trading journal, and the build fails if a number on the page doesn't match the file it came from. The rules and the review board are on the <a href="trading-system.html">trading system</a> page.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://collins-capital.pages.dev/" rel="noopener">See the live site</a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>I wanted the experiment to be inspectable. Friends and coworkers should be able to read what the fund did, including the misses, without me pasting a screenshot of an account. The site also had to refuse to go live if a figure was stale, leaked, or simply wrong.</p>
+      <p>This is my money only. It is not a fund that takes anyone else's money, and it is not investment advice. AI-made trades can and do lose money.</p>
+
+      <h2>How it works</h2>
+      <p>A script reads the journal, which is opened read-only, and writes static pages. Nothing is published unless the checks below pass.</p>
+      <ol class="flow" aria-label="Publish steps">
+        <li><b>Journal</b><span>Read-only SQLite</span></li>
+        <li><b>Build</b><span>Static pages from approved copy</span></li>
+        <li><b>Leak check</b><span>Identifiers out. Disclaimer in.</span></li>
+        <li><b>Data match</b><span>Page figures vs the source file</span></li>
+        <li><b>Publish</b><span>Tests pass. The tree is clean.</span></li>
+      </ol>
+      <ul>
+        <li><b>Leak check.</b> The build fails if a page contains an order ID, a long account number, or my email, or if the "not investment advice" line is missing.</li>
+        <li><b>Data-match gate.</b> A figure on the page has to match the source file it was copied from. A mismatch fails the build.</li>
+        <li><b>Clean tree.</b> Publish refuses a checkout with stray edits, or one that is behind the main branch.</li>
+        <li><b>Stale data.</b> If the data is more than one trading day old, every page shows a banner.</li>
+      </ul>
+      <p>On Nov 9, 2026 the site's own suite had 279 tests passing and 1 skipped. Separate from that, the money-critical trading code had 56 checks passing the same day: 19 on order handling, 20 on position sizing, 8 on exit codes, and 9 on the wash-sale gate.</p>
+      <p>The fund site asks search engines not to index it. This page is a direct link. The fund site does not name me. This page does.</p>
+
+      <h2>Results</h2>
+      <p>The only return I am publishing is the v1 record, measured from Sep 24 through the Oct 23, 2026 close. The momentum rules were retired on Oct 21, and the account was in cash after that, through the Oct 23 close. The percent is for the whole account, including positions that were already there when this trial started.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>v1, Sep 24 – Oct 23, 2026 close</th><th>Return</th></tr>
+          <tr><td>Collins Capital</td><td>−8.17%</td></tr>
+          <tr><td>SPY</td><td>−0.94%</td></tr>
+          <tr><td>QQQ</td><td>−4.95%</td></tr>
+          <tr><td>AIQ</td><td>−5.59%</td></tr>
+        </table>
+      </div>
+      <p class="note">Day 60 of the trial is a process check, not a verdict. A short window of a few positions is mostly noise. Not investment advice. AI-made trades can and do lose money.</p>
+
+      <h2>A decision I changed</h2>
+      <p>A test that was supposed to stop a bad page from shipping was green for the wrong reason. It checked a file path that no longer existed, so it could not fail. Changing a trade's written reason still let that branch publish. The test now points at the real path. If the page and the source file disagree, the build fails.</p>
+
+      <h2>Status</h2>
+      <p>The site is live at <a href="https://collins-capital.pages.dev/" rel="noopener">collins-capital.pages.dev</a>. Trading under the current rules has been running since Oct 29, 2026. The live site shows the v1 record and does not show a later percent. This page doesn't either.</p>
+
+      <h2>Open questions</h2>
+      <p>I am not showing a return for the rules now in force. The journal has no official close mark after Oct 28, 2026, and I won't publish a figure I derived from a morning read.</p>
+      <p>One line on the fund site's home page describes a daily input that is not running. I don't repeat that line here. It needs a copy pass on that site before it should be read as fact.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Owner. I approve what the site can say. Coding agents build and publish it.</dd>
+        <dt>Live site</dt><dd><a href="https://collins-capital.pages.dev/" rel="noopener">collins-capital.pages.dev</a></dd>
+        <dt>Tools</dt><dd>Python, SQLite, pytest, Cloudflare Pages</dd>
+        <dt>Tests</dt><dd>279 passed, 1 skipped on the site. 56 passing on the money-critical trading code. Both as of Nov 9, 2026.</dd>
+        <dt>Money</dt><dd>My own. No outside investors.</dd>
+        <dt>Status</dt><dd>Live. Unlisted in search.</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>

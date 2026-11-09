@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desk display · Ty Collins</title>
+<meta name="description" content="A 7-inch read-only portfolio display for a Raspberry Pi Zero 2 W. Privacy mode shows percentages only, and a missing number stays missing.">
+<link rel="canonical" href="https://tycoll3.github.io/projects/desk-display.html">
+<meta property="og:title" content="Desk display · Ty Collins">
+<meta property="og:description" content="A read-only Raspberry Pi dashboard for one brokerage account. 60 tests. No trading from the screen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tycoll3.github.io/projects/desk-display.html">
+<meta property="og:image" content="https://tycoll3.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Desk display · Ty Collins">
+<meta name="twitter:description" content="A read-only Raspberry Pi dashboard for one brokerage account. 60 tests. No trading from the screen.">
+<meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav aria-label="Primary"><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main id="content" class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Oct 2026 – present</p>
+    <h1>Desk display</h1>
+    <p class="lede">A 7-inch dashboard for the account behind the <a href="trading-system.html">trading system</a>. It runs on a Raspberry Pi, it can only read, and it cannot trade. The picture on this page is example data, not the account.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>I wanted a glanceable view of the account on my desk. A phone app shows dollars, and it is easy to leave that screen where someone else can read it. The display had to work on a small, cheap computer, hide dollar figures when I ask it to, and refuse to invent a number it does not have.</p>
+
+      <h2>How it works</h2>
+      <p>The hardware is a 7-inch screen at 1024×600, on a Raspberry Pi Zero 2 W with 512 MB of memory. Charts are hand-written SVG, with no frontend packages, so the page fits in that memory.</p>
+      <ol class="flow" aria-label="What the screen shows">
+        <li><b>Portfolio</b><span>The account, as percents in privacy</span></li>
+        <li><b>Allocation</b><span>How the account is split</span></li>
+        <li><b>Market</b><span>Session context</span></li>
+        <li><b>Recap</b><span>After the close</span></li>
+        <li><b>Privacy</b><span>On until I choose otherwise</span></li>
+      </ol>
+      <ul>
+        <li><b>Three pages.</b> Portfolio, Allocation, and Market. I swipe between them. There is an after-close recap.</li>
+        <li><b>Hours.</b> The screen is scheduled from 8:00 AM to midnight ET.</li>
+        <li><b>Privacy.</b> It opens in Privacy until a choice is saved. Privacy hides every dollar figure and shows percentages.</li>
+        <li><b>Read-only.</b> The browser talks only to a server on 127.0.0.1. That server can read the account. It exposes no trading controls and no credentials. Credentials stay in encrypted Windows storage.</li>
+      </ul>
+      <figure class="chart">
+        <img src="../assets/desk-example.svg" width="760" height="460" alt="A schematic of the desk display labeled example data. It shows a fake since-start change of +0.4 percent, cash at 80 percent, two example slices at 12 and 8 percent, and a previous close marked not available.">
+        <figcaption>Example data, drawn for this page. The names, the +0.4%, and the 80 / 12 / 8 split are made up. They are not the account, and the live screen does not fall back to numbers like these.</figcaption>
+      </figure>
+
+      <h2>A decision I changed</h2>
+      <p>The first impulse was to keep the screen full. If a price was missing, show the last one, or fill the gap with sample numbers, so the Pi never looked broken. I changed that.</p>
+      <p>A missing figure stays missing, and the screen says so. The preview I use while building is allowed to show made-up numbers, and those screens are labeled example data. They are not a silent fallback for the live account.</p>
+
+      <h2>Status</h2>
+      <p>The display is built. The scope was committed Oct 1, 2026. On Nov 9, 2026, 60 tests passed. The suite covers the privacy view, missing values, and market hours. A history of live performance is not finished.</p>
+
+      <h2>Open questions</h2>
+      <ul>
+        <li>It has not been through a 24-hour run on the physical Pi.</li>
+        <li>It still needs a reliable source for historical performance and the previous close.</li>
+        <li>The Pi Zero itself has not been validated as the machine that runs it day to day.</li>
+      </ul>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Requirements and product decisions. Built with coding agents.</dd>
+        <dt>Hardware</dt><dd>Raspberry Pi Zero 2 W, 7-inch, 1024×600, 512 MB</dd>
+        <dt>Tools</dt><dd>Node.js, HTML, CSS, hand-written SVG</dd>
+        <dt>Tests</dt><dd>60 passing on Nov 9, 2026</dd>
+        <dt>Can it trade?</dt><dd>No. Read-only.</dd>
+        <dt>Status</dt><dd>Built. Not yet proven overnight on the Pi.</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a> · <a href="https://github.com/tycoll3" rel="noopener">GitHub</a></span></div></footer>
+</body>
+</html>
