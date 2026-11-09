@@ -1,6 +1,8 @@
 # Ty Collins — personal site
 
-Plain HTML and CSS. No build step, no packages, no trackers.
+Personal site for Ty Collins, an AI and analytics engineer in Cincinnati. Plain HTML and CSS case studies of personal projects in agentic systems, measurement, and public data. No build step, no packages, no trackers.
+
+GitHub: https://github.com/tycoll3
 
 ## Files
 
@@ -8,6 +10,9 @@ Plain HTML and CSS. No build step, no packages, no trackers.
 - `projects/` — one case study page per project
 - `demos/` — the two Scorigami maps, copied from the Scorigami project's output
 - `assets/style.css` — all styling, with light and dark themes
+- `assets/og.png` — share image for link previews
+- `404.html` — missing-page response, in the same style
+- `robots.txt` and `sitemap.xml` — crawl rules and the page list
 
 ## Preview on this PC
 
@@ -31,3 +36,4 @@ Then open http://127.0.0.1:8790
 - To add a project, copy a page in `projects/`, change the text, and add a card to the `#projects` section of `index.html`.
 - To refresh a Scorigami demo, rebuild it in the Scorigami project and copy the output file over the one in `demos/`.
 - Keep the numbers on the home page the same as the resume.
+- When a page is added or removed, update `sitemap.xml` and the canonical URL in that page's head.
