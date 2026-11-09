@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multi-agent trading system · Ty Collins</title>
+<meta name="description" content="An AI fund manager trades a small live-money account under a written rulebook, reviewed by a board of six models.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Sep 2026 – present</p>
+    <h1>Multi-agent trading system</h1>
+    <p class="lede">An AI fund manager trades a small live-money brokerage account under a written rulebook. A board of six models reviews its work and advises me. I'm the owner, and I'm the only one who can change the rules.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The question</h2>
+      <p>I wanted to know what it takes to let an AI agent act with real money and still trust the result. Paper trading doesn't answer that, because nothing is at stake. So I set up a small real account and built the controls around it.</p>
+      <p>This is an experiment in governance and engineering. It isn't investment advice, and it isn't a fund that takes anyone else's money.</p>
+
+      <h2>How it's organized</h2>
+      <p>The system has three roles, modeled on how a real fund separates them.</p>
+      <ul>
+        <li><b>The fund manager</b> is an AI agent. It researches and places trades inside a written risk rulebook. It's the only part of the system that can trade.</li>
+        <li><b>The board</b> is six language models that review the manager's reports and advise the owner. It has no brokerage access.</li>
+        <li><b>The owner</b> is me. I hold the only authority to change the rulebook or step in.</li>
+      </ul>
+
+      <h2>The trading tooling</h2>
+      <p>The fund manager works through Python and SQLite tooling built for safe execution:</p>
+      <ul>
+        <li><b>Idempotent order handling.</b> A retried order can't be placed twice, and every order is read back from the broker to confirm what happened.</li>
+        <li><b>Stop-based position sizing.</b> The size of a position follows from where its stop is.</li>
+        <li><b>A performance journal.</b> Every action is recorded, so the board and I review facts and not the agent's summary of them.</li>
+      </ul>
+
+      <h2>The board meeting</h2>
+      <ol class="flow" aria-label="Board meeting steps">
+        <li><b>Gather</b><span>Report, rulebook and journal, read-only</span></li>
+        <li><b>Redact</b><span>IDs replaced, then a leak check</span></li>
+        <li><b>Round 1</b><span>Six seats review independently</span></li>
+        <li><b>Round 2</b><span>Each responds to the others and votes</span></li>
+        <li><b>Chair memo</b><span>15 sections and an action register</span></li>
+      </ol>
+      <p>Each seat is a different model from a different lab, called through OpenRouter, so the board doesn't share one model's blind spots.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Seat</th><th>Lab</th><th>Job</th></tr>
+          <tr><td>Risk Officer</td><td>Anthropic</td><td>Risk review. The same model chairs the meeting and doesn't vote as chair.</td></tr>
+          <tr><td>Growth Analyst</td><td>OpenAI</td><td>Reviews opportunities taken and passed up, to catch habitual over-caution.</td></tr>
+          <tr><td>Devil's Advocate</td><td>Qwen</td><td>Argues against the consensus.</td></tr>
+          <tr><td>Rules Checker</td><td>Google</td><td>Checks actions against the rulebook and reviews operational reliability.</td></tr>
+          <tr><td>Quant</td><td>DeepSeek</td><td>Arithmetic and reconciliation only. No opinions.</td></tr>
+          <tr><td>Market Context</td><td>xAI</td><td>Live web search for context. It sees only public ticker symbols.</td></tr>
+        </table>
+      </div>
+      <p>The vote answers one question: does the owner need to step in? There are three possible answers, from "no owner action" to "urgent owner review." Poor performance alone can't trigger the urgent vote. Only a rule breach or a control failure can.</p>
+      <p>Every memo ends with an action register, and the next meeting starts by reviewing it. A full meeting costs about $1.65 in model usage.</p>
+
+      <h2>Rules that keep it honest</h2>
+      <ul>
+        <li><b>Advisory only.</b> The board can question, analyze and escalate. It can't trade, veto, set limits or rewrite the rulebook.</li>
+        <li><b>No hindsight.</b> Decisions are judged on what was known at the time. A later price move doesn't prove a decision right or wrong.</li>
+        <li><b>Small samples stay small.</b> The board has to say whether it's looking at one observation or a pattern, and can't label skill from a handful of trades.</li>
+        <li><b>A failed vote isn't invented.</b> If a model's reply is empty or cut off, it's retried once and then recorded as "no valid vote."</li>
+      </ul>
+
+      <h2>Privacy</h2>
+      <p>Before anything leaves my machine, account numbers and order IDs are replaced with stable labels such as <code>[order-1]</code>, so a model can refer to the same order in both rounds without seeing the real ID. A second check scans the outgoing text and stops the send if anything remains. Each request also tells the provider not to retain the data.</p>
+
+      <h2>The desk display</h2>
+      <p>A companion project shows the account on a 7-inch screen driven by a Raspberry Pi Zero 2 W. It reads the account through a read-only connection and can't trade.</p>
+      <ul>
+        <li>A privacy view shows percentages only, for when other people are nearby.</li>
+        <li>When a number isn't available, the screen says so and never substitutes sample data.</li>
+        <li>Charts are hand-written SVG with no frontend packages, to fit in 512 MB of memory.</li>
+      </ul>
+
+      <h2>Testing</h2>
+      <p>The board has 25 automated tests that run on fake files and a fake model client, so they need no network, no API key and no real account data. The desk display has its own test suite covering the privacy view, missing values and market hours.</p>
+
+      <h2>Still open</h2>
+      <p>The desk display hasn't been through a 24-hour run on the physical Pi yet, and it still needs a reliable source for historical performance.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Owner and designer. I wrote the rulebook and the board charter, and I direct AI coding agents to build the tooling.</dd>
+        <dt>Tools</dt><dd>Python, SQLite, OpenRouter, pytest, Node.js, Raspberry Pi</dd>
+        <dt>Models</dt><dd>Six labs: Anthropic, OpenAI, Google, xAI, DeepSeek, Qwen</dd>
+        <dt>Status</dt><dd>Running with live money</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ty Collins · AI & Analytics Engineering</title>
+<meta name="description" content="Ty Collins builds agent-run reporting and analytics systems. Work and personal projects in agentic AI, data engineering and BI.">
+<meta property="og:title" content="Ty Collins · AI & Analytics Engineering">
+<meta property="og:description" content="Agent-run reporting and analytics systems: work and personal projects.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="name" href="./">Ty Collins</a>
+    <nav><a href="#work">Work</a><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">AI &amp; analytics engineering · Cincinnati, OH</p>
+    <h1>I build reporting systems that AI agents run and people sign off on.</h1>
+    <p class="lede">I'm an AI and analytics engineer. My work sits where agentic AI meets governed data: the agent drafts the SQL and the report, the data platform keeps it accurate, and a person makes the final call.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:Tylerdcollins10@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>2 weeks → 48 hours</b><span>Report turnaround after moving a credit union's requests to an agent-driven pipeline</span></div>
+    <div class="stat"><b>25+ reports</b><span>Delivered into daily production through that pipeline</span></div>
+    <div class="stat"><b>500+ requesters</b><span>People whose data requests the pipeline serves</span></div>
+  </div>
+
+  <section id="work">
+    <p class="eyebrow">At work</p>
+    <h2>A credit union's first agentic reporting pipeline</h2>
+    <div class="two">
+      <div>
+        <p>At General Electric Credit Union I built the organization's first agentic analytics workflow. A data request arrives as a Jira ticket. An agent drafts the SQL and the report against governed data, an analyst reviews it, and it goes to production.</p>
+        <p>It connects Claude to Snowflake, DataHub, Jira, GitHub and Figma through the Model Context Protocol (MCP) and Python.</p>
+      </div>
+      <div>
+        <ol class="flow" style="grid-auto-flow:row;gap:22px" aria-label="Pipeline steps">
+          <li><b>Jira request</b><span>A stakeholder asks for data</span></li>
+          <li><b>Agent draft</b><span>SQL and report, using governed context from Snowflake and DataHub</span></li>
+          <li><b>Human review</b><span>An analyst checks and approves</span></li>
+          <li><b>Production release</b><span>Delivered as a repeatable, documented workflow</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow">Personal projects</p>
+    <h2>Things I build on my own time</h2>
+    <div class="cards">
+      <a class="card" href="projects/trading-system.html">
+        <h3>Multi-agent trading system</h3>
+        <ul class="tags"><li>Multi-agent</li><li>Python</li><li>SQLite</li><li>OpenRouter</li></ul>
+        <p>An AI fund manager trades a small live-money account under a written rulebook. A board of six models from six labs reviews its work and advises me, the owner.</p>
+        <span class="more">Read the case study →</span>
+      </a>
+      <a class="card" href="projects/job-tracker.html">
+        <h3>Job tracker</h3>
+        <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>Data collection</li></ul>
+        <p>A daily pipeline that reads 70 company job boards, filters about 7,000 postings down to the relevant few hundred, and scores each one against my resume.</p>
+        <span class="more">Read the case study →</span>
+      </a>
+      <a class="card" href="projects/scorigami.html">
+        <h3>Scorigami</h3>
+        <ul class="tags"><li>Python</li><li>Data visualization</li><li>Sports data</li></ul>
+        <p>Interactive maps of every final score that has ever happened in MLB and Big East basketball, plus a jackpot game concept built on NFL scores. Includes live demos.</p>
+        <span class="more">Read the case study →</span>
+      </a>
+      <a class="card" href="projects/barbuildr.html">
+        <h3>BarBuildr</h3>
+        <ul class="tags"><li>React Native</li><li>TypeScript</li><li>Supabase</li></ul>
+        <p>A mobile app that helps someone build a home whiskey bar. It tracks what's on your shelf and recommends the next bottle based on what's missing.</p>
+        <span class="more">Read the case study →</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="approach">
+    <p class="eyebrow">Approach</p>
+    <h2>How I work with AI agents</h2>
+    <p class="lede" style="margin-bottom:28px">I direct AI coding agents to build these systems. I set the requirements, make the product decisions and decide what ships. A few rules show up in everything I build.</p>
+    <ul class="principles">
+      <li><h3>A person holds the authority</h3><p>Agents draft, advise and execute inside written rules. In the trading system the review board can question and escalate, but it can't trade, veto or change the rules.</p></li>
+      <li><h3>Nothing sensitive leaves unchecked</h3><p>Before any text goes to an outside model, account numbers and order IDs are replaced with labels. A second check stops the send if anything was missed.</p></li>
+      <li><h3>Missing data stays missing</h3><p>If a number isn't available, the screen says so. The desk display never fills a gap with an estimate or sample data.</p></li>
+      <li><h3>Tests run without the real thing</h3><p>The test suites use fake files and fake clients, so they need no network, no API key and no real account data.</p></li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <p class="eyebrow">Experience</p>
+    <h2>Where I've worked</h2>
+    <div class="role">
+      <div class="when">Nov 2025 – Present</div>
+      <div><h3>Delivery Analyst, AI &amp; analytics engineering</h3><div class="muted">General Electric Credit Union · Cincinnati, OH</div>
+        <ul><li>Built the credit union's first agentic analytics workflow, cutting report turnaround from 2 weeks to 48 hours.</li><li>Delivered 25+ reports into daily production across retail, branch and digital banking teams.</li><li>Built governed data context in Snowflake and DataHub so agents can navigate data and interpret metrics.</li></ul></div>
+    </div>
+    <div class="role">
+      <div class="when">Jun 2024 – Sep 2025</div>
+      <div><h3>Business Intelligence Analyst</h3><div class="muted">Aspect Retail Logistics (3PL for Kroger) · Monroe, OH</div>
+        <ul><li>Owned 20+ recurring reports and the ETL behind them, covering $45M in active inventory and $150M in annual goods movement.</li><li>Built a rule-based inventory audit tool in R that flagged 1,200+ anomalies and cut the issue rate 98% in under six months.</li><li>Built a shelf-life forecast that cut at-risk inventory 89% in 7 months.</li></ul></div>
+    </div>
+    <div class="role">
+      <div class="when">May 2022 – Apr 2024</div>
+      <div><h3>Economic Analyst</h3><div class="muted">Charles L. Shor Foundation · Cincinnati, OH</div>
+        <ul><li>Analyzed 25+ government datasets and produced policy briefs for bipartisan U.S. senators, representatives and Cincinnati mayoral campaigns.</li><li>Contributed research to op-eds in The Washington Examiner and The Cincinnati Enquirer.</li></ul></div>
+    </div>
+    <div class="role">
+      <div class="when">Education</div>
+      <div><h3>Xavier University</h3><div class="muted">B.S. Business Administration · Business Analytics and Information Systems, Marketing</div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="lede">I'm looking for AI and analytics engineering roles in Cincinnati or remote.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:Tylerdcollins10@gmail.com">Tylerdcollins10@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span>Plain HTML and CSS. No trackers.</span></div></footer>
+</body>
+</html>

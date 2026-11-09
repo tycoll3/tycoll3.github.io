@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job tracker · Ty Collins</title>
+<meta name="description" content="A daily pipeline that reads 70 company job boards, filters about 7,000 postings and scores each match against a resume.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · Nov 2026</p>
+    <h1>Job tracker</h1>
+    <p class="lede">A daily pipeline that reads 70 company job boards, filters about 7,000 postings down to the few hundred that matter, and scores each one against my resume. It runs on my PC and costs nothing.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>AI and analytics jobs don't have consistent titles. The same work is an "Analytics Engineer" at one company and an "AI Automation Lead" at another, so searching by title misses most of them. I wanted to search by what the job involves.</p>
+
+      <h2>How it works</h2>
+      <ol class="flow" aria-label="Pipeline steps">
+        <li><b>Collect</b><span>70 boards across five job-board systems</span></li>
+        <li><b>Filter</b><span>Keywords in the full description, location and pay</span></li>
+        <li><b>Score</b><span>0–100 against my resume</span></li>
+        <li><b>Track</b><span>New, saved, applied, likely filled</span></li>
+        <li><b>Review</b><span>Local web dashboard</span></li>
+      </ol>
+      <ul>
+        <li><b>Collection.</b> It reads the public feeds of Greenhouse, Lever, Ashby, Workday and UKG job boards. No scraping of sites that forbid it, and no logins.</li>
+        <li><b>Two tracks.</b> A posting matches if it names both an AI term and a data term, or if it's a BI or analytics role by title.</li>
+        <li><b>Scoring.</b> Points come from how many of the posting's named tools are on my resume, how central AI or BI is to the role, the title, the level and the pay. Every score shows what counted for and against it.</li>
+        <li><b>Change tracking.</b> A posting has to be missing from two checks in a row before it's marked "likely filled," and a board outage can't close anything.</li>
+      </ul>
+
+      <h2>Results</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Measure</th><th>First full run</th></tr>
+          <tr><td>Job boards read</td><td>70 of 70</td></tr>
+          <tr><td>Postings collected</td><td>7,053</td></tr>
+          <tr><td>Matches after filtering</td><td>261</td></tr>
+          <tr><td>Matches in the Cincinnati area</td><td>40</td></tr>
+          <tr><td>Running cost</td><td>$0</td></tr>
+        </table>
+      </div>
+      <p>An insights page also ranks the skills that postings ask for and my resume doesn't list, which told me what to learn next.</p>
+
+      <h2>A decision I changed</h2>
+      <p>The first version sent each filtered posting to an LLM to score it against my resume. It worked, but it meant paying per job, every day. I replaced it with a rule-based score that runs locally.</p>
+      <p>The trade-off is real. The rule-based score counts keywords and can't judge what a job involves the way a model can. For a personal tool, a free score I can inspect line by line was the better choice.</p>
+
+      <h2>Testing</h2>
+      <p>14 automated tests cover salary parsing, location rules, both matching tracks, scoring, the closing logic and backups. They run against a temporary database.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>I set the requirements and made the product decisions. An AI coding agent wrote the code with me in one working session.</dd>
+        <dt>Tools</dt><dd>Python, Flask, SQLite, Windows Task Scheduler</dd>
+        <dt>Data sources</dt><dd>Greenhouse, Lever, Ashby, Workday and UKG public job feeds</dd>
+        <dt>Status</dt><dd>Runs daily at 7:30 AM</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+</body>
+</html>

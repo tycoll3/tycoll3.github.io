@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BarBuildr · Ty Collins</title>
+<meta name="description" content="A mobile app that helps someone build a home whiskey bar and recommends the next bottle based on what's missing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project · 2026</p>
+    <h1>BarBuildr</h1>
+    <p class="lede">A mobile app that helps someone build a home whiskey bar. It tracks the bottles on your shelf and recommends the next one to buy, based on what your collection is missing.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>The problem</h2>
+      <p>People new to whiskey don't know what to buy next. Most advice is a ranked list of "best bottles," which ignores what you already own. Three similar bourbons make a worse bar than three different styles.</p>
+
+      <h2>The recommendation engine</h2>
+      <p>The core of the app is a gap engine. It doesn't rank bottles. It looks at your shelf and finds what's missing in three ways.</p>
+      <ol class="flow" aria-label="Gap engine steps">
+        <li><b>Your shelf</b><span>The bottles you own</span></li>
+        <li><b>Flavor gap</b><span>Sweet, spice, fruity, smoky or rich</span></li>
+        <li><b>Cocktail gap</b><span>A classic you can't make yet</span></li>
+        <li><b>Proof gap</b><span>Nothing easy-drinking, or nothing bold</span></li>
+        <li><b>Up to 3 picks</b><span>Each with a plain reason</span></li>
+      </ol>
+      <ul>
+        <li><b>Flavor.</b> Every bottle carries flavor tags grouped into five families. If your shelf has no smoky bottle, the engine suggests the most beginner-friendly one.</li>
+        <li><b>Cocktails.</b> It checks six classics, such as the Manhattan and the Old Fashioned, and suggests the most versatile bottle for the first one you can't make.</li>
+        <li><b>Proof.</b> It checks whether you have something under 43% ABV for guests and something at 50% or above for cocktails.</li>
+      </ul>
+      <p>Each recommendation comes with a reason in plain words, so the app teaches as it suggests. It's rules, not machine learning, which keeps every suggestion explainable.</p>
+
+      <h2>What's in the app</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Part</th><th>What it does</th></tr>
+          <tr><td>Shelf</td><td>Track the bottles you own</td></tr>
+          <tr><td>Catalog</td><td>Browse 174 bottles with flavor, cocktail and price data</td></tr>
+          <tr><td>Preference quiz</td><td>Find a starting point from your tastes</td></tr>
+          <tr><td>Recipes</td><td>15 cocktails, matched to what's on your shelf</td></tr>
+          <tr><td>Learn</td><td>Guided paths through whiskey styles</td></tr>
+          <tr><td>Tasting log</td><td>Record what you've tried</td></tr>
+          <tr><td>Progress</td><td>19 achievements and badges</td></tr>
+        </table>
+      </div>
+
+      <h2>How it's built</h2>
+      <p>The app is React Native with Expo and TypeScript, across 15 screens. Supabase provides the Postgres database and user sign-in, and the bottle catalog is defined in SQL. Sign-in tokens are kept in the phone's secure storage.</p>
+
+      <h2>Status</h2>
+      <p>BarBuildr is a working prototype that runs on a phone through Expo. It hasn't been released to the app stores.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Product concept, catalog data and recommendation rules. Built with AI coding agents.</dd>
+        <dt>Tools</dt><dd>React Native, Expo, TypeScript, Supabase, PostgreSQL</dd>
+        <dt>Size</dt><dd>15 screens, 174 bottles, 15 recipes</dd>
+        <dt>Status</dt><dd>Working prototype</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+</body>
+</html>

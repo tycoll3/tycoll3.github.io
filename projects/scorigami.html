@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scorigami · Ty Collins</title>
+<meta name="description" content="Interactive maps of every final score in MLB and Big East basketball history, plus a jackpot game concept built on NFL scores.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap"><a class="name" href="../">Ty Collins</a><nav><a href="../#projects">Projects</a><a href="../#experience">Experience</a><a href="../#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+  <div class="case-head">
+    <p><a class="back" href="../#projects">← All projects</a></p>
+    <p class="eyebrow">Personal project</p>
+    <h1>Scorigami</h1>
+    <p class="lede">A scorigami is a final score that has never happened before. I built interactive maps of every score in MLB and Big East basketball history, then designed a jackpot game around the idea using NFL scores.</p>
+  </div>
+
+  <div class="layout">
+    <article class="prose">
+      <h2>Try it</h2>
+      <p>Both maps are single self-contained pages. Each cell is a final score, colored by how often it has happened.</p>
+      <div class="demo-links">
+        <a class="btn primary" href="../demos/mlb-scorigami.html">MLB scorigami map</a>
+        <a class="btn" href="../demos/big-eastagami.html">Big East basketball map</a>
+      </div>
+
+      <h2>MLB: every score since 1871</h2>
+      <p>The MLB map is built from Retrosheet game logs going back to 1871 and covers all 30 teams. A Python script reads every season file, counts each final score, and writes one HTML page with the data inside it.</p>
+      <p>A second script answers one question after a Cincinnati Reds game: was that score a scorigami? It accepts the score in any format, looks it up, reports how many times it has happened and when it last did, and drafts a post ready to share.</p>
+
+      <h2>Big East basketball</h2>
+      <p>"Big Eastagami" does the same for Big East men's basketball from the 2014 season through 2026. It adds a team and season filter, an overtime marker on each cell, a banner for the most recent scorigami, and a panel that estimates the most likely next one.</p>
+
+      <h2>Scorigami Jackpot: a game concept</h2>
+      <p>The third piece is a working demo of a game. Every NFL score that has never happened carries its own jackpot, and players buy tickets on the scores they think will hit.</p>
+      <ol class="flow" aria-label="Game steps">
+        <li><b>Board</b><span>1,074+ unseen scores, each with a jackpot</span></li>
+        <li><b>Ticket</b><span>A player picks a score</span></li>
+        <li><b>Eligibility lock</b><span>Tied to games not yet kicked off</span></li>
+        <li><b>Results</b><span>A week's games are finalized</span></li>
+        <li><b>Payout</b><span>Only eligible tickets win</span></li>
+      </ol>
+      <p>The hard design problem was fairness. Without a rule, a player could wait until a game was nearly over and buy the score on the board. So each ticket is permanently linked, at purchase, to the games that hadn't kicked off yet. A ticket bought after kickoff can't win on that game.</p>
+      <p>The demo is a Python web server and a SQLite database with no external packages. It simulates three NFL weeks, so the eligibility rule can be shown end to end. It's a concept demo with play money, not a live product.</p>
+
+      <h2>What it shows</h2>
+      <ul>
+        <li>Turning a large public dataset into one clear picture.</li>
+        <li>Shipping a finished, shareable result as a single file with no server.</li>
+        <li>Working out a rule system and proving it with a database and a simulation.</li>
+      </ul>
+
+      <p class="note">MLB data: the information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at <a href="https://www.retrosheet.org" rel="noopener">www.retrosheet.org</a>.</p>
+    </article>
+
+    <aside>
+      <dl class="facts">
+        <dt>My role</dt><dd>Concept, data and design. Built with AI coding agents.</dd>
+        <dt>Tools</dt><dd>Python, SQLite, HTML and JavaScript</dd>
+        <dt>Data</dt><dd>Retrosheet game logs (MLB), Big East game logs, historical NFL scores</dd>
+        <dt>Status</dt><dd>Maps complete. Jackpot game is a beta demo.</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ty Collins</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+</body>
+</html>
