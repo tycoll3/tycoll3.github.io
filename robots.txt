@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tycoll3.github.io/sitemap.xml
+Sitemap: https://tylercollins.pages.dev/sitemap.xml

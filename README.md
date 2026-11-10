@@ -34,3 +34,7 @@ Then open http://127.0.0.1:8790
 - To add a project, copy a page in `projects/`, change the text, and add a card to the `#projects` section of `index.html`.
 - To refresh a Scorigami demo, rebuild it in the Scorigami project and copy the output file over the one in `demos/`.
 - Keep the numbers on the home page the same as the resume.
+
+## Cloudflare Pages (main address)
+
+The main address is https://tylercollins.pages.dev. Every push to `main` deploys there through `.github/workflows/deploy-cloudflare.yml`, which uses the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` repo secrets. GitHub Pages keeps serving the same files at tycoll3.github.io, and every page's canonical tag points to the pages.dev copy.
