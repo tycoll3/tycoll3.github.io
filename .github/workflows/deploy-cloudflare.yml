@@ -16,7 +16,7 @@ jobs:
       - name: Collect the site files
         run: |
           mkdir dist
-          cp -r index.html 404.html robots.txt sitemap.xml assets demos projects dist/
+          cp -r index.html 404.html robots.txt sitemap.xml _redirects assets demos projects dist/
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
