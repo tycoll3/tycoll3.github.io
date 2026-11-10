@@ -1,6 +1,6 @@
-# Tyler (Ty) Collins
+# Ty Collins
 
-Tyler Collins builds agent-run reporting and analytics systems. Work and personal projects in agentic AI, data engineering and BI.
+Ty Collins builds agent-run reporting and analytics systems. Work and personal projects in agentic AI, data engineering and BI.
 
 ## Projects
 
@@ -10,5 +10,5 @@ Tyler Collins builds agent-run reporting and analytics systems. Work and persona
 - https://tylercollins.pages.dev/projects/competitor-watch — An independent public-data watch on GECU and Cincinnati-area credit unions: rates, branches, NCUA call data, app reviews, and job posts.
 - https://tylercollins.pages.dev/projects/job-tracker — A daily pipeline that reads 70 company job boards, filters about 7,000 postings and scores each match against a resume.
 - https://tylercollins.pages.dev/projects/reporting-pipeline — An agent-driven reporting workflow at a credit union: Jira request, agent draft on governed data, human review, production release.
-- https://tylercollins.pages.dev/projects/scorigami — Interactive maps of every final score in MLB and Big East basketball history, plus a jackpot game concept built on NFL scores.
+- https://tylercollins.pages.dev/projects/scorigami — Interactive maps of every final score in MLB history and of Big East men's basketball conference games from the 2013–14 season through 2025–26, plus a jackpot game concept built on NFL scores.
 - https://tylercollins.pages.dev/projects/barbuildr — A mobile app that helps someone build a home whiskey bar and recommends the next bottle based on what's missing.
