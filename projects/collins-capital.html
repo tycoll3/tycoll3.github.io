@@ -3,26 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collins Capital · Ty Collins</title>
+<title>Collins Capital · Tyler Collins</title>
 <meta name="description" content="An AI fund manager trades my own money in a Robinhood account under a written rulebook. Value trading backed by sentiment.">
 <link rel="canonical" href="https://tylercollins.pages.dev/projects/collins-capital">
-<meta property="og:title" content="Collins Capital · Ty Collins">
+<meta property="og:title" content="Collins Capital · Tyler Collins">
 <meta property="og:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Value trading backed by sentiment. 56 money-critical checks. 280 site tests.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tylercollins.pages.dev/projects/collins-capital">
-<meta property="og:image" content="https://tylercollins.pages.dev/assets/og.png">
+<meta property="og:image" content="https://tylercollins.pages.dev/assets/og-collins-capital.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Collins Capital · Ty Collins">
+<meta name="twitter:title" content="Collins Capital · Tyler Collins">
 <meta name="twitter:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Value trading backed by sentiment. 56 money-critical checks. 280 site tests.">
-<meta name="twitter:image" content="https://tylercollins.pages.dev/assets/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23172b45'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<meta name="twitter:image" content="https://tylercollins.pages.dev/assets/og-collins-capital.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Collins Capital",
+  "description": "An AI fund manager trades my own money in a Robinhood account under a written rulebook. Value trading backed by sentiment.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://tylercollins.pages.dev/#person",
+    "name": "Tyler Collins",
+    "url": "https://tylercollins.pages.dev/"
+  },
+  "url": "https://tylercollins.pages.dev/projects/collins-capital",
+  "dateModified": "2026-11-09"
+}
+</script>
 </head>
 <body id="top">
 <a class="skip" href="#content">Skip to content</a>
@@ -120,6 +138,15 @@
         </table>
       </div>
       <p class="note">SPY −0.94% is the site's published source (official closes). The weekly email used −0.96% from the 4:00 PM trade price.</p>
+
+
+      <h2>What running a real-money agent taught me</h2>
+      <ul>
+        <li>A submitted order isn't proof; every order is read back from the broker before it counts.</li>
+        <li>When broker state is unclear, the system goes into safe mode and takes no new exposure.</li>
+        <li>An audit caught a rule that lived only in code and not in the written rulebook; the rulebook is now the source of truth.</li>
+        <li>A deposit has to be booked as a cash flow, not a return. Otherwise the page would have shown a fake jump.</li>
+      </ul>
 
       <h2>Status</h2>
       <p>v4.2 has been live since Oct 29, 2026. No agent buys yet, because no candidate has passed every gate. The live fund site shows the closed v1 record and does not show a later percent. This page does not either. An older bookmark for the trading-system page still works; it points here.</p>
