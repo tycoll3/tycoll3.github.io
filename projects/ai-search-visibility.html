@@ -36,6 +36,17 @@
     <p class="lede">When someone asks an AI where to bank in Cincinnati, does General Electric Credit Union (GECU) get named? I scored 383 public answers to find out. This is an independent personal project. It uses public AI answers. It is not GECU work product, and it uses no internal GECU data.</p>
   </div>
 
+
+  <section class="metrics case-metrics" aria-label="Key findings at a glance">
+    <div class="metrics-grid">
+      <div><strong>70%</strong><p>GECU in 73 of 105 Oct 12 discovery answers</p></div>
+      <div><strong>39× first</strong><p>named first — more than double Cinfed (18)</p></div>
+      <div><strong>47% vs 0%</strong><p>recommended when located vs unlocated (Oct 8)</p></div>
+      <div><strong>45/45</strong><p>brand answers correctly identified Cincinnati GECU</p></div>
+    </div>
+    <p class="metrics-note">Data as of Oct 2026 · Source: AI model answers via OpenRouter API, Oct 8 and Oct 12 runs</p>
+  </section>
+
   <div class="layout">
     <article class="prose">
       <p class="note"><b>Key finding.</b> Location decided the answer. When the question said "I'm in Cincinnati," the credit union was recommended in 41 of 87 answers (47%). With no location, it was recommended in 0 of 85.</p>
@@ -56,24 +67,32 @@
       <p>There were two scored runs, plus a smaller first check. They are separate baselines, not a trend.</p>
       <div class="table-wrap">
         <table>
-          <tr><th>Run</th><th>Design</th><th>Answers</th><th>Spend</th></tr>
-          <tr><td>Oct 7, 2026</td><td>First check. One search path, not part of the 383.</td><td>12 prompts on 4 surfaces, plus 11 model calls</td><td>$0.73</td></tr>
-          <tr><td>Oct 8, 2026</td><td>8 models × 15 questions × 2 versions (located and unlocated). 240 calls.</td><td>233 (7 calls failed, all one model)</td><td>$9.09</td></tr>
-          <tr><td>Oct 12, 2026</td><td>5 models × 30 questions. Every prompt began "I'm in Cincinnati."</td><td>150 of 150</td><td>$9.08</td></tr>
+          <tr><th>Run</th><th>Design</th><th>Answers</th></tr>
+          <tr><td>Oct 7, 2026</td><td>First check. One search path, not part of the 383.</td><td>12 prompts on 4 search paths, plus 11 model calls</td></tr>
+          <tr><td>Oct 8, 2026</td><td>8 models × 15 questions × 2 versions (located and unlocated). 240 calls.</td><td>233 (7 calls failed, all one model)</td></tr>
+          <tr><td>Oct 12, 2026</td><td>5 models × 30 questions. Every prompt began "I'm in Cincinnati."</td><td>150 of 150</td></tr>
         </table>
       </div>
-      <p>The 383 is 233 + 150. The Oct 8 models were ChatGPT, a Copilot stand-in, Gemini, Claude, Grok, Perplexity, Perplexity Pro, and a Meta AI stand-in. The Oct 12 models were ChatGPT, the Copilot stand-in, Gemini, Claude, and Grok. Copilot and Meta AI here are API stand-ins, not the consumer apps. These calls are not the signed-in products people use.</p>
+      <p>The 383 is 233 + 150. All answers came from AI models through OpenRouter's API with web search on — not from the consumer ChatGPT, Gemini, Copilot, or Google apps. The Oct 8 models were GPT, a Copilot-class stand-in, Gemini, Claude, Grok, Perplexity, Perplexity Pro, and a Meta-class stand-in. The Oct 12 models were GPT, the Copilot-class stand-in, Gemini, Claude, and Grok. Where a name matches a consumer product, it is the nearest OpenRouter model, not the signed-in app.</p>
       <p>Located means the question started with "I'm in Cincinnati," plus a location parameter where the model supports one. Unlocated means the same words with no place anywhere. On Oct 8, 11 of the 15 questions did not name GECU (discovery) and 4 did (brand). On Oct 12, 21 were discovery and 9 were brand.</p>
 
       <h2>Results</h2>
       <p>Asking from a place changed the outcome. On the Oct 8 discovery questions, GECU was recommended in 41 of 87 located answers (47%) and in 0 of 85 unlocated answers.</p>
       <figure class="chart">
-        <img src="../assets/location-effect.svg" width="720" height="280" alt="Bar chart. GECU was recommended in 41 of 87 located discovery answers, 47 percent, and in 0 of 85 unlocated discovery answers.">
-        <figcaption>Oct 8, 2026. Discovery questions only. One answer per question per model. A gap of one or two answers is noise.</figcaption>
+        <img src="../assets/location-effect.svg" width="720" height="280" loading="lazy" alt="Bar chart. GECU was recommended in 41 of 87 located discovery answers, 47 percent, and in 0 of 85 unlocated discovery answers.">
+        <figcaption>Oct 8 discovery questions only. One answer per question per model. Data as of Oct 2026 · Source: AI model answers via OpenRouter API, Oct 8 run.</figcaption>
       </figure>
       <p>The same acronym caused a different error when no city was given. On Oct 8 brand questions with no location, 21 of 32 answers described the El Paso GECU, 9 of 32 named both or asked which one, and 2 were unclear. With "I'm in Cincinnati," 29 of 29 located brand answers described the Cincinnati credit union.</p>
       <p>Models did not agree with each other. On located Oct 8 discovery questions, recommendations ran from 0 of 10 (the Meta AI stand-in) to 10 of 11 (ChatGPT and the Copilot stand-in). Gemini recommended GECU in 8 of 11, Grok in 6, Perplexity in 3, Claude in 2, and Perplexity Pro in 2.</p>
       <p>The Oct 12 run kept the city in every prompt. Of 105 discovery answers, GECU was in the answer 73 times (70%) and named first 39 times. The two closest local credit unions were close behind on mentions and well behind on being first.</p>
+      <figure class="chart">
+        <img src="../assets/ai-in-answer-share.webp" width="1400" height="787" loading="lazy" alt="Horizontal bar chart of how often each institution appeared in 105 Oct 12 discovery answers. GECU 73 of 105 (70 percent), Cinfed 71 (68 percent), Kemba 65 (62 percent), Wright-Patt 50 (48 percent), Fifth Third 37 (35 percent), Sharefax 21 (20 percent), Superior 12 (11 percent).">
+        <figcaption>Share of Oct 12 discovery answers that named each institution. Data as of Oct 2026 · Source: AI model answers via OpenRouter API, Oct 12 run (21 questions × 5 models).</figcaption>
+      </figure>
+      <figure class="chart">
+        <img src="../assets/ai-named-first.webp" width="1400" height="787" loading="lazy" alt="Horizontal bar chart of times each institution was named first in 105 Oct 12 discovery answers. GECU 39, Cinfed 18, Fifth Third 15, Kemba 13, Wright-Patt 12, Sharefax 3, Superior 1.">
+        <figcaption>Named-first scoreboard for the same 105 answers. GECU led by a wide margin. Data as of Oct 2026 · Source: AI model answers via OpenRouter API, Oct 12 run.</figcaption>
+      </figure>
       <div class="table-wrap">
         <table>
           <tr><th>Institution</th><th>In the answer</th><th>Named first</th></tr>
@@ -87,6 +106,10 @@
         </table>
       </div>
       <p>A stricter hand score, where the model tells the reader to use or start with GECU, was 28 of 105. The credit union's own site was a source on 60 of 105 discovery answers. One "Kemba" hit was the Columbus credit union, not the West Chester one. I took it out, which moved Kemba from 66 to 65 in the answer and from 14 to 13 named first.</p>
+      <figure class="chart">
+        <img src="../assets/ai-gecu-funnel.webp" width="1400" height="787" loading="lazy" alt="Funnel chart for GECU across 105 Oct 12 discovery answers: asked 105, in answer 73 of 105 (70 percent), named first 39 of 105 (37 percent), recommended 28 of 105 (27 percent).">
+        <figcaption>GECU visibility funnel on the Oct 12 discovery set. "Recommended" is the strict hand score. Data as of Oct 2026 · Source: AI model answers via OpenRouter API, Oct 12 run.</figcaption>
+      </figure>
       <p>On the 45 Oct 12 brand answers, 45 of 45 identified General Electric Credit Union in Cincinnati. None said a job at GE was required to join. Nine of the 45 still had a fact that did not match the credit union's site or the NCUA call report, including a high-yield savings product the site does not list, a youth account I could not find there, and one $10 membership-deposit line taken from the El Paso site. Seven of the 45 cited a look-alike site. The call report lists 324,004 members as of June 30, 2026. Located answers that stated a member count did not agree with each other: 160,000, 200,000, 260,000, 280,000, 320,000, and 324,000.</p>
 
       <h2>A decision I changed</h2>
@@ -99,7 +122,7 @@
       <h2>Open questions</h2>
       <ul>
         <li>Each question was asked once per model. This does not measure how much an answer moves from day to day. A weekly repeat was sketched and not approved.</li>
-        <li>API calls with a search tool are not the consumer apps, and two of the "apps" are stand-ins.</li>
+        <li>OpenRouter API calls with a search tool are not the consumer ChatGPT, Gemini, Copilot, or Google apps, and two model slots are stand-ins for product families.</li>
         <li>Rival counts are rules plus spot checks. GECU's own rungs were read by hand. Differences of one or two answers are noise.</li>
         <li>Location reached the models that accept a location parameter. It is not a GPS reading of a person.</li>
       </ul>
