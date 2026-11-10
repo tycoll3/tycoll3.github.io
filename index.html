@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ty Collins · AI & Analytics Engineering</title>
+<title>Ty Collins · AI Engineering & Enterprise Analytics</title>
 <meta name="description" content="Ty Collins builds agent-run reporting and analytics systems. Work and personal projects in agentic AI, data engineering and BI.">
 <link rel="canonical" href="https://tycoll3.github.io/">
-<meta property="og:title" content="Ty Collins · AI & Analytics Engineering">
+<meta property="og:title" content="Ty Collins · AI Engineering & Enterprise Analytics">
 <meta property="og:description" content="Agent-run reporting and analytics systems: work and personal projects.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tycoll3.github.io/">
@@ -15,147 +15,231 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ty Collins · AI & Analytics Engineering">
+<meta name="twitter:title" content="Ty Collins · AI Engineering & Enterprise Analytics">
 <meta name="twitter:description" content="Agent-run reporting and analytics systems: work and personal projects.">
 <meta name="twitter:image" content="https://tycoll3.github.io/assets/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f5c5c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23172b45'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#content">Skip to content</a>
-<header class="site-head">
-  <div class="wrap">
-    <a class="name" href="./">Ty Collins</a>
-    <nav aria-label="Primary"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
-  </div>
-</header>
+<header class="site-header"><div class="nav-shell"><a class="wordmark" href="./" aria-label="Ty Collins home">TY COLLINS<span>.</span></a><nav class="nav-links" aria-label="Primary"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact</a></nav></div></header>
 
-<main id="content" class="wrap">
-  <div class="hero">
-    <p class="eyebrow">AI &amp; analytics engineering · Cincinnati, OH</p>
-    <h1>I build reporting systems that AI agents run and people sign off on.</h1>
-    <p class="lede">I'm an AI and analytics engineer. My work sits where agentic AI meets governed data: the agent drafts the SQL and the report, the data platform keeps it accurate, and a person makes the final call.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:Tylerdcollins10@gmail.com">Email me</a>
-      <a class="btn" href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="stats">
-    <div class="stat"><b>2 weeks → 48 hours</b><span>Report turnaround after moving a credit union's requests to an agent-driven pipeline</span></div>
-    <div class="stat"><b>25+ reports</b><span>Delivered into daily production through that pipeline</span></div>
-    <div class="stat"><b>500+ requesters</b><span>People whose data requests the pipeline serves</span></div>
-  </div>
-
-  <section id="work">
-    <p class="eyebrow">At work</p>
-    <h2>A credit union's first agentic reporting pipeline</h2>
-    <div class="two">
-      <div>
-        <p>At General Electric Credit Union I built the organization's first agentic analytics workflow. A data request arrives as a Jira ticket. An agent drafts the SQL and the report against governed data, an analyst reviews it, and it goes to production.</p>
-        <p>It connects Claude to Snowflake, DataHub, Jira, GitHub and Figma through the Model Context Protocol (MCP) and Python.</p>
+<main id="content">
+  <section class="hero">
+    <div class="content-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Engineering &amp; Enterprise Analytics</p>
+        <h1>Building technology that makes organizations better.</h1>
+        <p class="hero-description">Exploring intelligent systems, data infrastructure, and how emerging technology transforms the way we work.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore my work<span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#about">About me<span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <div>
-        <ol class="flow" style="grid-auto-flow:row;gap:22px" aria-label="Pipeline steps">
-          <li><b>Jira request</b><span>A stakeholder asks for data</span></li>
-          <li><b>Agent draft</b><span>SQL and report, using governed context from Snowflake and DataHub</span></li>
-          <li><b>Human review</b><span>An analyst checks and approves</span></li>
-          <li><b>Production release</b><span>Delivered as a repeatable, documented workflow</span></li>
-        </ol>
+      <div class="hero-system" aria-label="Engineering focus areas">
+        <div class="system-header"><span>ENGINEERING FOCUS</span><span>01—04</span></div>
+        <div class="system-list">
+          <div><span>01</span><p>Agentic systems</p></div>
+          <div><span>02</span><p>Enterprise data</p></div>
+          <div><span>03</span><p>Applied AI</p></div>
+          <div><span>04</span><p>Analytics engineering</p></div>
+        </div>
+        <p class="system-location">Cincinnati, Ohio · 39.1031° N</p>
       </div>
     </div>
   </section>
 
-  <section id="projects">
-    <p class="eyebrow">Personal projects</p>
-    <h2>Things I build on my own time</h2>
-    <div class="cards">
-      <a class="card" href="projects/trading-system.html">
-        <h3>Multi-agent trading system</h3>
-        <ul class="tags"><li>Multi-agent</li><li>Python</li><li>SQLite</li><li>OpenRouter</li></ul>
-        <p>An AI fund manager trades a small live-money account under a written rulebook, and a board of six models from six labs reviews its work. The record is public, losses included.</p>
-        <span class="more">Read the case study →</span>
-      </a>
-      <a class="card" href="projects/ai-search-visibility.html">
-        <h3>AI search visibility</h3>
-        <ul class="tags"><li>OpenRouter</li><li>Evaluation</li><li>Python</li></ul>
-        <p>An independent study of which local institutions AI assistants name when someone in Cincinnati asks where to bank. 383 scored answers across eight models. Not work product.</p>
-        <span class="more">Read the case study →</span>
-      </a>
-      <a class="card" href="projects/job-tracker.html">
-        <h3>Job tracker</h3>
-        <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>Data collection</li></ul>
-        <p>A daily pipeline that reads 70 company job boards, filters about 7,000 postings down to the relevant few hundred, and scores each one against my resume.</p>
-        <span class="more">Read the case study →</span>
-      </a>
-      <a class="card" href="projects/scorigami.html">
-        <h3>Scorigami</h3>
-        <ul class="tags"><li>Python</li><li>Data visualization</li><li>Sports data</li></ul>
-        <p>Interactive maps of every final score that has ever happened in MLB and Big East basketball, plus a jackpot game concept built on NFL scores. Includes live demos.</p>
-        <span class="more">Read the case study →</span>
-      </a>
-    </div>
-
-    <p class="eyebrow spaced">More projects</p>
-    <ul class="more-list">
-      <li><a href="projects/collins-capital.html">Collins Capital</a><span>The public site for the trading system. Rebuilt daily from the trading journal, and the build fails if a figure doesn't match its source.</span></li>
-      <li><a href="projects/desk-display.html">Desk display</a><span>A 7-inch read-only Raspberry Pi dashboard for the same account. A missing number stays missing.</span></li>
-      <li><a href="projects/team-tyler.html">Team Tyler</a><span>Role-based agents under written rules. I measured where the usage went, then changed the rules.</span></li>
-      <li><a href="projects/competitor-watch.html">Cincinnati competitor watch</a><span>A local credit union market read from public pages only: rates, branches, call reports and app reviews.</span></li>
-      <li><a href="projects/locallyasked.html">LocallyAsked</a><span>A paused test of an AI-visibility report for local shops, and the findings I withdrew when they didn't reproduce.</span></li>
-      <li><a href="projects/barbuildr.html">BarBuildr</a><span>A mobile app that recommends the next bottle for a home whiskey bar, based on what's missing.</span></li>
-      <li><b>Weekly fund report</b><span>A tested program that turns the trading journal into a five-page Friday chart PDF. It writes a file and never sends or trades. 29 tests passing as of Nov 9, 2026.</span></li>
-      <li><b>Prompt library</b><span>Three prompts I reuse: a handoff brief, a plain-English pull-request review, and a day-7 check-in.</span></li>
-    </ul>
-  </section>
-
-  <section id="approach">
-    <p class="eyebrow">Approach</p>
-    <h2>How I work with AI agents</h2>
-    <p class="lede" style="margin-bottom:28px">I direct AI coding agents to build these systems. I set the requirements, make the product decisions and decide what ships. A few rules show up in everything I build.</p>
-    <ul class="principles">
-      <li><h3>A person holds the authority</h3><p>Agents draft, advise and execute inside written rules. In the trading system the review board can question and escalate, but it can't trade, veto or change the rules.</p></li>
-      <li><h3>Nothing sensitive leaves unchecked</h3><p>Before any text goes to an outside model, account numbers and order IDs are replaced with labels. A second check stops the send if anything was missed.</p></li>
-      <li><h3>Missing data stays missing</h3><p>If a number isn't available, the screen says so. The desk display never fills a gap with an estimate or sample data.</p></li>
-      <li><h3>Tests run without the real thing</h3><p>The test suites use fake files and fake clients, so they need no network, no API key and no real account data.</p></li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <p class="eyebrow">Experience</p>
-    <h2>Where I've worked</h2>
-    <div class="role">
-      <div class="when">Nov 2025 – Present</div>
-      <div><h3>Delivery Analyst, AI &amp; analytics engineering</h3><div class="muted">General Electric Credit Union · Cincinnati, OH</div>
-        <ul><li>Built the credit union's first agentic analytics workflow, cutting report turnaround from 2 weeks to 48 hours.</li><li>Delivered 25+ reports into daily production across retail, branch and digital banking teams.</li><li>Built governed data context in Snowflake and DataHub so agents can navigate data and interpret metrics.</li></ul></div>
-    </div>
-    <div class="role">
-      <div class="when">Jun 2024 – Sep 2025</div>
-      <div><h3>Business Intelligence Analyst</h3><div class="muted">Aspect Retail Logistics (3PL for Kroger) · Monroe, OH</div>
-        <ul><li>Owned 20+ recurring reports and the ETL behind them, covering $45M in active inventory and $150M in annual goods movement.</li><li>Built a rule-based inventory audit tool in R that flagged 1,200+ anomalies and cut the issue rate 98% in under six months.</li><li>Built a shelf-life forecast that cut at-risk inventory 89% in 7 months.</li></ul></div>
-    </div>
-    <div class="role">
-      <div class="when">May 2022 – Apr 2024</div>
-      <div><h3>Economic Analyst</h3><div class="muted">Charles L. Shor Foundation · Cincinnati, OH</div>
-        <ul><li>Analyzed 25+ government datasets and produced policy briefs for bipartisan U.S. senators, representatives and Cincinnati mayoral campaigns.</li><li>Contributed research to op-eds in The Washington Examiner and The Cincinnati Enquirer.</li></ul></div>
-    </div>
-    <div class="role">
-      <div class="when">Education</div>
-      <div><h3>Xavier University</h3><div class="muted">B.S. Business Administration · Business Analytics and Information Systems, Marketing</div></div>
+  <section class="metrics" aria-label="Selected professional impact">
+    <div class="content-shell metrics-grid">
+      <div><strong>48 hrs</strong><p>Report turnaround, down from two weeks</p></div>
+      <div><strong>25+</strong><p>Reports delivered into daily production</p></div>
+      <div><strong>98%</strong><p>Reduction in inventory issue rate</p></div>
+      <div><strong>25+</strong><p>Government datasets analyzed</p></div>
     </div>
   </section>
 
-  <section id="contact">
-    <p class="eyebrow">Contact</p>
-    <h2>Get in touch</h2>
-    <p class="lede">Email is the fastest way to reach me.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:Tylerdcollins10@gmail.com">Tylerdcollins10@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a>
+  <section class="work section" id="work">
+    <div class="content-shell">
+      <div class="section-heading">
+        <p class="eyebrow">01 / Selected work</p>
+        <h2>Ideas put into practice.</h2>
+        <p class="section-description">A collection of enterprise implementations, independent experiments, and engineering projects exploring practical applications of artificial intelligence.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-visual architecture-enterprise" role="img" aria-label="Workflow diagram: request, agent, review, report, over governed context from Snowflake and DataHub">
+            <div class="architecture-row"><span>Request</span><i></i><span>Agent</span><i></i><span>Review</span><i></i><span>Report</span></div>
+            <div class="governance-rail"><b>Governed context</b><span>Snowflake</span><span>DataHub</span></div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>01</span><span>Enterprise AI</span></div>
+            <h3>Enterprise Agentic Analytics Platform</h3>
+            <p>Built an agent-driven enterprise reporting workflow connecting governed data, analytical automation, and human oversight.</p>
+            <div class="tag-list"><span class="tag">Claude</span><span class="tag">MCP</span><span class="tag">Snowflake</span><span class="tag">DataHub</span><span class="tag">Python</span></div>
+            <a class="text-link" href="projects/reporting-pipeline.html">View project overview<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual architecture-capital" role="img" aria-label="Diagram: a fund manager agent surrounded by a six-model advisory board">
+            <div class="capital-center">Fund<br>manager</div>
+            <div class="agent-ring"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div>
+            <p>6-model advisory board · Owner authority</p>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>02</span><span>Autonomous Systems</span></div>
+            <h3>Collins Capital</h3>
+            <p>A live-money multi-agent investment system. An AI fund manager trades under a written rulebook, with risk controls and a six-model advisory board.</p>
+            <div class="tag-list"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Multi-Agent AI</span><span class="tag">OpenRouter</span></div>
+            <a class="text-link" href="projects/trading-system.html">View case study<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual architecture-research" role="img" aria-label="Bar chart of how often each model recommended the credit union on located questions, Oct 8, 2026: ChatGPT 10 of 11, Copilot stand-in 10 of 11, Gemini 8 of 11, Grok 6 of 11, Perplexity 3 of 11, Claude 2 of 11, Perplexity Pro 2 of 11, Meta AI stand-in 0 of 10">
+            <div class="research-meta"><span>RECOMMENDED · LOCATED QUESTIONS · OCT 8</span><b>41 of 87</b></div>
+            <div class="research-bars">
+              <div><span>ChatGPT</span><i style="--bar: 91%;"></i><b>10/11</b></div>
+              <div><span>Copilot*</span><i style="--bar: 91%;"></i><b>10/11</b></div>
+              <div><span>Gemini</span><i style="--bar: 73%;"></i><b>8/11</b></div>
+              <div><span>Grok</span><i style="--bar: 55%;"></i><b>6/11</b></div>
+              <div><span>Perplexity</span><i style="--bar: 27%;"></i><b>3/11</b></div>
+              <div><span>Claude</span><i style="--bar: 18%;"></i><b>2/11</b></div>
+              <div><span>Pplx Pro</span><i style="--bar: 18%;"></i><b>2/11</b></div>
+              <div><span>Meta AI*</span><i style="--bar: 0%;"></i><b>0/10</b></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>03</span><span>AI Research &amp; Evaluation</span></div>
+            <h3>AI Search Visibility &amp; Competitor Watch</h3>
+            <p>Evaluated 383 answers across frontier language models and built automated competitive intelligence workflows using public data. *API stand-ins.</p>
+            <div class="tag-list"><span class="tag">LLM Evaluation</span><span class="tag">OpenRouter</span><span class="tag">Python</span><span class="tag">Automation</span></div>
+            <a class="text-link" href="projects/ai-search-visibility.html">View research<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual architecture-reporting" role="img" aria-label="Pipeline steps: collect job boards, filter postings, score matches, track changes. 70 boards, 7,053 postings, 261 matches.">
+            <div class="report-code">
+              <span>01</span><p>collect_job_boards()</p>
+              <span>02</span><p>filter_postings()</p>
+              <span>03</span><p>score_matches()</p>
+              <span>04</span><p>track_changes()</p>
+            </div>
+            <div class="report-status"><i></i> 70 BOARDS · 7,053 POSTINGS · 261 MATCHES</div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>04</span><span>Data Engineering</span></div>
+            <h3>Job Tracker</h3>
+            <p>A daily pipeline that reads 70 company job boards, filters about 7,000 postings down to the relevant few hundred, and scores each one against a resume.</p>
+            <div class="tag-list"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Data Collection</span></div>
+            <a class="text-link" href="projects/job-tracker.html">View case study<span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+
+      <p class="eyebrow more-heading" id="projects">More projects</p>
+      <ul class="more-list">
+        <li><a href="projects/collins-capital.html">Collins Capital public site</a><span>Rebuilt daily from the trading journal, and the build fails if a figure doesn't match its source.</span></li>
+        <li><a href="projects/desk-display.html">Desk display</a><span>A 7-inch read-only Raspberry Pi dashboard for the same account. A missing number stays missing.</span></li>
+        <li><a href="projects/team-tyler.html">Team Tyler</a><span>Role-based agents under written rules. I measured where the usage went, then changed the rules.</span></li>
+        <li><a href="projects/competitor-watch.html">Cincinnati competitor watch</a><span>A local credit union market read from public pages only: rates, branches, call reports and app reviews.</span></li>
+        <li><a href="projects/scorigami.html">Scorigami</a><span>Interactive maps of every final score in MLB and Big East basketball history, with live demos.</span></li>
+        <li><a href="projects/locallyasked.html">LocallyAsked</a><span>A paused test of an AI-visibility report for local shops, and the findings I withdrew when they didn't reproduce.</span></li>
+        <li><a href="projects/barbuildr.html">BarBuildr</a><span>A mobile app that recommends the next bottle for a home whiskey bar, based on what's missing.</span></li>
+        <li><b>Weekly fund report</b><span>A tested program that turns the trading journal into a five-page Friday chart PDF. 29 tests passing as of Nov 9, 2026.</span></li>
+        <li><b>Prompt library</b><span>Three prompts I reuse: a handoff brief, a plain-English pull-request review, and a day-7 check-in.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="approach section">
+    <div class="content-shell approach-grid">
+      <div class="section-heading section-heading-inverse">
+        <p class="eyebrow">02 / My approach</p>
+        <h2>Technology is most valuable when it solves real problems.</h2>
+      </div>
+      <div class="approach-copy">
+        <p>I work across business strategy, data engineering, and applied AI, connecting technical capabilities to meaningful outcomes.</p>
+        <p>I'm particularly interested in how intelligent agents can transform traditional workflows and expand what individuals and organizations can accomplish.</p>
+        <div class="principle-row">
+          <div><span>01</span><p>Human authority</p></div>
+          <div><span>02</span><p>Governed data</p></div>
+          <div><span>03</span><p>Verified outcomes</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about section" id="about">
+    <div class="content-shell about-grid">
+      <div class="portrait-reserve" aria-hidden="true"><span>TC</span></div>
+      <div class="about-copy">
+        <div class="section-heading">
+          <p class="eyebrow">03 / About me</p>
+          <h2>Curious by nature. Technical by practice.</h2>
+        </div>
+        <p>I'm an analytics and engineering professional based in Cincinnati, Ohio. My work spans enterprise data systems, AI-enabled reporting, and independent experimentation with autonomous agents.</p>
+        <p>I enjoy exploring emerging technologies, understanding how systems work end to end, and building practical applications that bridge engineering and business.</p>
+        <div class="about-details">
+          <div><span>EDUCATION</span><p>Xavier University<br>B.S. Business Administration</p></div>
+          <div><span>FOCUS</span><p>AI engineering<br>Enterprise analytics</p></div>
+        </div>
+        <a class="text-link" href="#experience">View experience<span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience section" id="experience">
+    <div class="content-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked.</h2>
+      </div>
+      <div class="role">
+        <div class="when">Nov 2025 – Present</div>
+        <div><h3>Delivery Analyst, AI &amp; analytics engineering</h3><div>General Electric Credit Union · Cincinnati, OH</div>
+          <ul><li>Built the credit union's first agentic analytics workflow, cutting report turnaround from 2 weeks to 48 hours.</li><li>Delivered 25+ reports into daily production across retail, branch and digital banking teams.</li><li>Built governed data context in Snowflake and DataHub so agents can navigate data and interpret metrics.</li></ul></div>
+      </div>
+      <div class="role">
+        <div class="when">Jun 2024 – Sep 2025</div>
+        <div><h3>Business Intelligence Analyst</h3><div>Aspect Retail Logistics (3PL for Kroger) · Monroe, OH</div>
+          <ul><li>Owned 20+ recurring reports and the ETL behind them, covering $45M in active inventory and $150M in annual goods movement.</li><li>Built a rule-based inventory audit tool in R that flagged 1,200+ anomalies and cut the issue rate 98% in under six months.</li><li>Built a shelf-life forecast that cut at-risk inventory 89% in 7 months.</li></ul></div>
+      </div>
+      <div class="role">
+        <div class="when">May 2022 – Apr 2024</div>
+        <div><h3>Economic Analyst</h3><div>Charles L. Shor Foundation · Cincinnati, OH</div>
+          <ul><li>Analyzed 25+ government datasets and produced policy briefs for bipartisan U.S. senators, representatives and Cincinnati mayoral campaigns.</li><li>Contributed research to op-eds in The Washington Examiner and The Cincinnati Enquirer.</li></ul></div>
+      </div>
+      <div class="role">
+        <div class="when">Education</div>
+        <div><h3>Xavier University</h3><div>B.S. Business Administration · Business Analytics and Information Systems, Marketing</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div class="content-shell contact-grid">
+      <div>
+        <p class="eyebrow">04 / Contact</p>
+        <h2>Let's connect.</h2>
+      </div>
+      <div class="contact-copy">
+        <p>I'm always interested in thoughtful conversations about emerging technology, engineering, and meaningful problems worth solving.</p>
+        <div class="contact-links">
+          <a class="text-link" href="mailto:Tylerdcollins10@gmail.com">Email<span aria-hidden="true">→</span></a>
+          <a class="text-link" href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn<span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Ty Collins · Plain HTML and CSS. No trackers.</span><span><a href="mailto:Tylerdcollins10@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a></span></div></footer>
+<footer><div class="content-shell footer-grid"><p>© 2026 Ty Collins</p><div><a href="mailto:Tylerdcollins10@gmail.com">Email</a><a href="https://www.linkedin.com/in/Tyler-Collins10" rel="noopener">LinkedIn</a><a href="#top">Back to top ↑</a></div></div></footer>
 </body>
 </html>
