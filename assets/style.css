@@ -228,6 +228,38 @@ th { color: var(--steel); background: var(--warm-white); font: 600 10px/1.4 var(
 figure.chart { margin: 22px 0 12px; }
 figure.chart img { display: block; width: 100%; height: auto; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); }
 figure.chart figcaption { color: var(--slate); font-size: 14px; margin-top: 8px; }
+
+/* Case-study metrics strip (reuses .metrics / .metrics-grid) */
+.case-metrics {
+  margin: 0 0 48px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.case-metrics .metrics-grid > div:first-child { padding-left: 28px; }
+.case-metrics .metrics-grid > div:last-child { padding-right: 28px; }
+.case-metrics .metrics-note {
+  max-width: none;
+  margin: 0;
+  padding: 12px 28px 16px;
+  color: var(--slate);
+  font-size: 13px;
+  line-height: 1.45;
+  border-top: 1px solid var(--border);
+}
+@media (width <= 900px) {
+  .case-metrics .metrics-grid > div:first-child,
+  .case-metrics .metrics-grid > div:nth-child(3) { padding-left: 28px; }
+}
+@media (width <= 420px) {
+  .case-metrics .metrics-grid > div,
+  .case-metrics .metrics-grid > div:first-child,
+  .case-metrics .metrics-grid > div:nth-child(3) { padding-left: 22px; padding-right: 22px; }
+  .case-metrics .metrics-note { padding-inline: 22px; }
+}
+
 code { font-family: var(--mono); font-size: .9em; color: var(--navy); }
 .demo-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
 
