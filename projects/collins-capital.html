@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Collins Capital · Ty Collins</title>
-<meta name="description" content="An AI fund manager trades my own money in a Robinhood account under a written rulebook, reviewed by a six-model board from six labs.">
+<meta name="description" content="An AI fund manager trades my own money in a Robinhood account under a written rulebook. Value trading backed by sentiment.">
 <link rel="canonical" href="https://tylercollins.pages.dev/projects/collins-capital">
 <meta property="og:title" content="Collins Capital · Ty Collins">
-<meta property="og:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Six-model board. 56 money-critical checks. 280 site tests.">
+<meta property="og:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Value trading backed by sentiment. 56 money-critical checks. 280 site tests.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tylercollins.pages.dev/projects/collins-capital">
 <meta property="og:image" content="https://tylercollins.pages.dev/assets/og.png">
@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="Ty Collins · AI and analytics engineering">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collins Capital · Ty Collins">
-<meta name="twitter:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Six-model board. 56 money-critical checks. 280 site tests.">
+<meta name="twitter:description" content="Live-money AI fund on Robinhood since Sep 24, 2026. Value trading backed by sentiment. 56 money-critical checks. 280 site tests.">
 <meta name="twitter:image" content="https://tylercollins.pages.dev/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23172b45'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ETC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,8 @@
     <p><a class="back" href="../#work">← All projects</a></p>
     <p class="eyebrow">Personal project · Sep 2026 – present</p>
     <h1>Collins Capital</h1>
-    <p class="lede">An AI fund manager trades my own money in a Robinhood account under a written rulebook. A board of six models from six labs reviews the work and advises me. I am the owner, and I am the only one who can change the rules.</p>
+    <p class="lede">An AI fund manager trades my own money in a Robinhood account under a written rulebook. A board of six models from six labs is built to review the work and advise me. I am the owner, and I am the only one who can change the rules.</p>
+    <p class="lede"><b>Value trading backed by sentiment: a value screen builds the watchlist, sentiment timing decides when a limit buy is allowed, every agent buy gets a broker stop, and only the owner can change the rulebook.</b></p>
     <div class="actions">
       <a class="btn primary" href="https://collins-capital.pages.dev/" rel="noopener">See the live fund site</a>
     </div>
@@ -43,68 +44,58 @@
     <article class="prose">
       <h2>Why this exists</h2>
       <p>I wanted to know what it takes to let an AI agent act with real money and still trust the result. Paper trading does not answer that. So I funded a small Robinhood account on Sep 24, 2026, wrote the rules down, and built the controls around them.</p>
-      <p class="note">This is my money only. It is not a fund that takes anyone else's money, and it is not investment advice. AI-made trades can and do lose money.</p>
+      <p class="note">This is my money only. It is not a fund that takes anyone else's money, and it is not investment advice. This is not a recommendation to buy or sell anything. AI-made trades can and do lose money.</p>
 
       <h2>How it is organized</h2>
       <ul>
         <li><b>The fund manager</b> is an AI agent. It researches and places trades inside the rulebook. It is the only part of the system that can trade.</li>
-        <li><b>The board</b> is six language models, each from a different lab, that review the manager's reports and advise me. It has no brokerage access.</li>
+        <li><b>The board</b> is six language models, each from a different lab, built to review the manager's reports and advise me. It has no brokerage access. Formal board runs are currently paused.</li>
         <li><b>The owner</b> is me. I hold the only authority to change the rulebook or step in.</li>
       </ul>
 
-      <h2>The arc</h2>
-      <p>The first rulebook was a momentum strategy. Live money ran under those rules from Sep 24. On Oct 21, after the data said the pattern was buying high and selling low, I retired v1 completely. The account stayed in cash while the rules were rewritten.</p>
-      <p>The rewrite became rulebook v4.2: value builds the watchlist, sentiment times the entry. Tyler approved it in his own words. Trading under v4.2 has been live since Oct 29, 2026. I am not publishing a return for v4.2. The journal has no official close mark for that period yet, and I will not invent one.</p>
-
-      <h2>Rulebook versions</h2>
-      <p>Dates below come from the rulebook files themselves (headers, status lines, and approval lines).</p>
+      <h2>Timeline</h2>
+      <p>Dates below are from the trading journal and the rulebook files. No dollar amounts.</p>
       <div class="table-wrap">
         <table>
-          <tr><th>Version</th><th>Date in file</th><th>What happened</th></tr>
-          <tr><td>v1.0</td><td>Approved strategy direction Sep 28, 2026</td><td>Momentum rules. Live money from Sep 24; retired Oct 21.</td></tr>
-          <tr><td>v2.0 DRAFT</td><td>Strategy direction Oct 26, 2026</td><td>Never approved. Kept as a draft only.</td></tr>
-          <tr><td>v3.0 DRAFT</td><td>Parked Oct 26, 2026</td><td>Value trial declined ("trial no"). Not active.</td></tr>
-          <tr><td>v4.0 DRAFT</td><td>Oct 27, 2026</td><td>Value + sentiment draft.</td></tr>
-          <tr><td>v4.1 FINAL DRAFT</td><td>Oct 28, 2026</td><td>Final draft pending approval.</td></tr>
-          <tr><td>v4.2</td><td>In force from Oct 29, 2026</td><td>Current. Value + sentiment. Approved Oct 28–29.</td></tr>
+          <tr><th>When</th><th>What happened</th></tr>
+          <tr><td>Sep 24, 2026</td><td>Account funded. Performance base set.</td></tr>
+          <tr><td>Sep 25, 2026</td><td>Inherited positions opened (not Reid's selections).</td></tr>
+          <tr><td>Sep 28, 2026</td><td>Strategy direction approved (rulebook header).</td></tr>
+          <tr><td>Sep 29, 2026</td><td>Rulebook v1.0 takes effect. Momentum rules. Live autonomous operation starts.</td></tr>
+          <tr><td>Oct 1, 2026</td><td>Reid's first own fill under v1.0.</td></tr>
+          <tr><td>Oct 21, 2026</td><td>v1 retired. Account all cash.</td></tr>
+          <tr><td>Oct 26, 2026</td><td>v2.0 DRAFT never approved. v3.0 DRAFT parked ("trial no").</td></tr>
+          <tr><td>Oct 27, 2026</td><td>v4.0 DRAFT (value + sentiment).</td></tr>
+          <tr><td>Oct 28, 2026</td><td>v4.1 FINAL DRAFT. A deposit recorded as a flow, not a return. Tyler approves live trading.</td></tr>
+          <tr><td>Oct 29, 2026</td><td>Rulebook v4.2 Value + Sentiment live.</td></tr>
+          <tr><td>Since Oct 29</td><td>No agent buys yet. No candidate has passed every gate.</td></tr>
         </table>
       </div>
+      <p>v1 was a momentum strategy. It appears here only as history. The rules in force now are value plus sentiment.</p>
 
-      <h2>The daily loop</h2>
-      <p>On a trading day the system runs a fixed sequence. The wash-sale gate fails closed if the list is missing or more than a day old. Every action lands in the journal. Fridays produce a weekly chart PDF. The board reviews on a separate cycle and cannot trade.</p>
-      <ol class="flow" aria-label="Daily operating loop">
-        <li><b>Pre-market brief</b><span>Holdings scan, wash-sale freshness, estimate snapshot</span></li>
-        <li><b>Open run</b><span>Limit buys only, only for names that fully qualified</span></li>
-        <li><b>Wash-sale gate</b><span>Code check before every buy</span></li>
-        <li><b>Journal</b><span>Thesis, fills, stops, tax fields</span></li>
-        <li><b>Weekly PDF</b><span>Friday packet from the journal</span></li>
-        <li><b>Board review</b><span>Six models, advisory only</span></li>
+      <h2>The daily loop (live)</h2>
+      <p>On a trading day the live path is short. A stale wash-sale list blocks buys. Every agent buy is a limit order with a real broker stop. Every action is logged to the journal. An official close mark at 4:20 PM ET starts Nov 10, 2026.</p>
+      <ol class="flow" aria-label="Live daily operating loop">
+        <li><b>7:00 AM pre-brief</b><span>Holdings and gate check before the open</span></li>
+        <li><b>Wash-sale gate</b><span>A stale list blocks buys</span></li>
+        <li><b>9:31 AM ET open run</b><span>Limit buys only, with a broker stop on every buy</span></li>
+        <li><b>Journal</b><span>Every action logged</span></li>
+        <li><b>4:20 PM close mark</b><span>Official mark, starting Nov 10</span></li>
       </ol>
       <figure class="chart">
-        <img src="../assets/daily-loop.svg" width="760" height="280" alt="Diagram of the daily operating loop: pre-market brief, open run, wash-sale gate, journal, weekly PDF, then board review by six models. Labeled sanitized diagram with no account data.">
-        <figcaption>Operating loop. Sanitized diagram. No account data.</figcaption>
+        <img src="../assets/daily-loop.svg" width="760" height="220" alt="Diagram of the live daily loop: 7:00 AM pre-brief, wash-sale gate, 9:31 AM ET open run with broker stops, journal logging, and 4:20 PM close mark starting Nov 10. Sanitized diagram with no account data.">
+        <figcaption>Live operating loop. Sanitized diagram. No account data.</figcaption>
       </figure>
 
-      <h2>The board</h2>
-      <ol class="flow" aria-label="Board meeting steps">
-        <li><b>Gather</b><span>Report, rulebook and journal, read-only</span></li>
-        <li><b>Redact</b><span>IDs replaced, then a leak check</span></li>
-        <li><b>Round 1</b><span>Six seats review independently</span></li>
-        <li><b>Round 2</b><span>Each responds to the others and votes</span></li>
-        <li><b>Chair memo</b><span>Fifteen sections and an action register</span></li>
-      </ol>
-      <div class="table-wrap">
-        <table>
-          <tr><th>Seat</th><th>Lab</th><th>Job</th></tr>
-          <tr><td>Risk Officer</td><td>Anthropic</td><td>Risk review. The same model chairs and does not vote as chair.</td></tr>
-          <tr><td>Growth Analyst</td><td>OpenAI</td><td>Opportunities taken and passed up.</td></tr>
-          <tr><td>Devil's Advocate</td><td>Qwen</td><td>Argues against the consensus.</td></tr>
-          <tr><td>Rules Checker</td><td>Google</td><td>Actions vs the rulebook; operational reliability.</td></tr>
-          <tr><td>Quant</td><td>DeepSeek</td><td>Arithmetic and reconciliation only.</td></tr>
-          <tr><td>Market Context</td><td>xAI</td><td>Live web search for context. Public tickers only.</td></tr>
-        </table>
-      </div>
-      <p>The vote answers one question: does the owner need to step in? Poor performance alone cannot trigger the urgent vote. A full meeting costs about $1 in model usage (logged meetings ran $0.47 to $1.65).</p>
+      <h2>Built, not running</h2>
+      <p>These pieces are built and tested, but they are paused right now:</p>
+      <ul>
+        <li><b>All-day run schedule</b> — the older multi-slot weekday schedule.</li>
+        <li><b>Weekly shareholder email and PDF</b> — the Friday packet generator.</li>
+        <li><b>Board snapshot</b> — the six-model advisory meeting.</li>
+        <li><b>Watchdog</b> — the missed-run monitor.</li>
+      </ul>
+      <p>When a board meeting does run, a full meeting costs about $1 in model usage (logged meetings ran $0.47 to $1.65). The six seats are Anthropic, OpenAI, Qwen, Google, DeepSeek, and xAI. The board cannot trade.</p>
 
       <h2>What the tooling enforces</h2>
       <ul>
@@ -118,32 +109,34 @@
       <p>A separate static site at <a href="https://collins-capital.pages.dev/" rel="noopener">collins-capital.pages.dev</a> rebuilds from the journal. The build fails if a page leaks an identifier, if a figure does not match its source file, or if the checkout is dirty. That site asks search engines not to index it. It has a suite of 280 automated tests.</p>
 
       <h2>What v1 taught</h2>
-      <p>The only return I am publishing is the v1 record, measured from Sep 24 through the Oct 23, 2026 close. The momentum rules were already retired on Oct 21; the account was in cash after that through the Oct 23 close. The percent is for the whole account, including positions that were already there when the trial started. That result is why the rules changed, not a claim about what comes next.</p>
+      <p>The only return I am publishing is the closed v1 record. Momentum rules were retired on Oct 21; the account was in cash after that through the Oct 23, 2026 close used for this table. The percent is for the whole account, including inherited positions. That result is why the rules changed, not a claim about what comes next. I am not publishing a return for v4.2.</p>
       <div class="table-wrap">
         <table>
-          <tr><th>v1, Sep 24 – Oct 23, 2026 close</th><th>Return</th></tr>
+          <tr><th>Closed v1 record, Sep 24 – Oct 23, 2026 close</th><th>Return</th></tr>
           <tr><td>Collins Capital</td><td>−8.17%</td></tr>
           <tr><td>SPY</td><td>−0.94%</td></tr>
           <tr><td>QQQ</td><td>−4.95%</td></tr>
           <tr><td>AIQ</td><td>−5.59%</td></tr>
         </table>
       </div>
+      <p class="note">SPY −0.94% is the site's published source (official closes). The weekly email used −0.96% from the 4:00 PM trade price.</p>
 
       <h2>Status</h2>
-      <p>Trading under v4.2 has been running since Oct 29, 2026. The live fund site shows the v1 record and does not show a later percent. This page does not either. An older bookmark for the trading-system page still works; it points here.</p>
+      <p>v4.2 has been live since Oct 29, 2026. No agent buys yet, because no candidate has passed every gate. The live fund site shows the closed v1 record and does not show a later percent. This page does not either. An older bookmark for the trading-system page still works; it points here.</p>
     </article>
 
     <aside>
       <dl class="facts">
         <dt>My role</dt><dd>Owner. I wrote the rulebook and the board charter. Coding agents build the tooling.</dd>
         <dt>Broker</dt><dd>Robinhood</dd>
+        <dt>Strategy</dt><dd>Value + sentiment (v4.2)</dd>
         <dt>Live since</dt><dd>Sep 24, 2026</dd>
         <dt>Current rules</dt><dd>v4.2, live since Oct 29, 2026</dd>
-        <dt>Board</dt><dd>Six models, six labs</dd>
+        <dt>Board</dt><dd>Six labs. Built; formal runs paused.</dd>
         <dt>Checks</dt><dd>56 money-critical. 280 site tests.</dd>
         <dt>Live site</dt><dd><a href="https://collins-capital.pages.dev/" rel="noopener">collins-capital.pages.dev</a></dd>
         <dt>Money</dt><dd>My own. No outside investors.</dd>
-        <dt>Status</dt><dd>Running with live money</dd>
+        <dt>Status</dt><dd>v4.2 live. No agent buys yet.</dd>
       </dl>
     </aside>
   </div>

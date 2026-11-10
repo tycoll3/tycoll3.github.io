@@ -1,44 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" aria-labelledby="title desc">
-  <title id="title">Daily operating loop</title>
-  <desc id="desc">Six steps in a day: pre-market brief, open run, wash-sale gate, journal, weekly PDF, board review.</desc>
-  <rect width="760" height="280" fill="#f7f8f7"/>
-  <text x="28" y="36" font-family="'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="18" fill="#172b45">Daily operating loop</text>
-  <text x="28" y="58" font-family="'Source Sans 3', system-ui, sans-serif" font-size="13" fill="#536476">Sanitized diagram. No account data.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-labelledby="title desc">
+  <title id="title">Live daily operating loop</title>
+  <desc id="desc">Five live steps: 7:00 AM pre-brief, wash-sale gate, 9:31 AM ET open run with broker stops, journal, and 4:20 PM close mark starting Nov 10.</desc>
+  <rect width="760" height="220" fill="#f7f8f7"/>
+  <text x="28" y="34" font-family="'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="18" fill="#172b45">Live daily loop</text>
+  <text x="28" y="54" font-family="'Source Sans 3', system-ui, sans-serif" font-size="13" fill="#536476">Sanitized diagram. No account data. Weekly PDF and board runs are paused.</text>
 
-  <!-- boxes -->
   <g font-family="'IBM Plex Sans', system-ui, sans-serif">
-    <rect x="28" y="90" width="100" height="72" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
-    <text x="78" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Pre-market</text>
-    <text x="78" y="138" text-anchor="middle" font-size="11" fill="#536476">brief</text>
+    <rect x="28" y="86" width="120" height="88" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
+    <text x="88" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">7:00 AM</text>
+    <text x="88" y="138" text-anchor="middle" font-size="11" fill="#536476">Pre-brief</text>
 
-    <rect x="158" y="90" width="100" height="72" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
-    <text x="208" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Open run</text>
-    <text x="208" y="138" text-anchor="middle" font-size="11" fill="#536476">limit buys</text>
+    <rect x="174" y="86" width="120" height="88" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
+    <text x="234" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Wash-sale</text>
+    <text x="234" y="138" text-anchor="middle" font-size="11" fill="#536476">Stale = no buy</text>
 
-    <rect x="288" y="90" width="100" height="72" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
-    <text x="338" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Wash-sale</text>
-    <text x="338" y="138" text-anchor="middle" font-size="11" fill="#536476">gate</text>
+    <rect x="320" y="86" width="120" height="88" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
+    <text x="380" y="112" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">9:31 AM ET</text>
+    <text x="380" y="132" text-anchor="middle" font-size="11" fill="#536476">Open run</text>
+    <text x="380" y="150" text-anchor="middle" font-size="10" fill="#536476">Limit + broker stop</text>
 
-    <rect x="418" y="90" width="100" height="72" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
-    <text x="468" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Journal</text>
-    <text x="468" y="138" text-anchor="middle" font-size="11" fill="#536476">every action</text>
+    <rect x="466" y="86" width="120" height="88" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
+    <text x="526" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Journal</text>
+    <text x="526" y="138" text-anchor="middle" font-size="11" fill="#536476">Every action</text>
 
-    <rect x="548" y="90" width="100" height="72" rx="6" fill="#ffffff" stroke="#496782" stroke-width="1.5"/>
-    <text x="598" y="120" text-anchor="middle" font-size="11" font-weight="600" fill="#172b45">Weekly PDF</text>
-    <text x="598" y="138" text-anchor="middle" font-size="11" fill="#536476">Friday packet</text>
-
-    <rect x="330" y="190" width="100" height="72" rx="6" fill="#172b45" stroke="#172b45" stroke-width="1.5"/>
-    <text x="380" y="220" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff">Board review</text>
-    <text x="380" y="238" text-anchor="middle" font-size="11" fill="#b9cad8">six models</text>
+    <rect x="612" y="86" width="120" height="88" rx="6" fill="#172b45" stroke="#172b45" stroke-width="1.5"/>
+    <text x="672" y="112" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff">4:20 PM</text>
+    <text x="672" y="132" text-anchor="middle" font-size="11" fill="#b9cad8">Close mark</text>
+    <text x="672" y="150" text-anchor="middle" font-size="10" fill="#b9cad8">from Nov 10</text>
   </g>
 
-  <!-- arrows top row -->
-  <g stroke="#496782" stroke-width="1.5" fill="none">
-    <path d="M128 126 H158" marker-end="url(#arr)"/>
-    <path d="M258 126 H288" marker-end="url(#arr)"/>
-    <path d="M388 126 H418" marker-end="url(#arr)"/>
-    <path d="M518 126 H548" marker-end="url(#arr)"/>
-    <path d="M598 162 V176 H380 V190" marker-end="url(#arr)"/>
+  <g stroke="#496782" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+    <path d="M148 130 H174"/>
+    <path d="M294 130 H320"/>
+    <path d="M440 130 H466"/>
+    <path d="M586 130 H612"/>
   </g>
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
