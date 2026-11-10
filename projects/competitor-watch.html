@@ -36,6 +36,17 @@
     <p class="lede">How much of a competitive picture can be built from public pages alone? I watched General Electric Credit Union (GECU) and Cincinnati-area peers for three weeks. Rates, job posts, NCUA call data, app reviews, and branch coverage. Nothing was submitted, signed up for, or taken from inside GECU. This is an independent personal project, not GECU work product.</p>
   </div>
 
+
+  <section class="metrics case-metrics" aria-label="Key findings at a glance">
+    <div class="metrics-grid">
+      <div><strong>34.9%</strong><p>of residents more than 3 miles from all six credit unions</p></div>
+      <div><strong>$4.213B</strong><p>GECU assets — the only peer shrinking (−1.9% YoY)</p></div>
+      <div><strong>0.45% vs 6.00%</strong><p>GECU high-yield checking vs Cinfed Summit (up to $10k)</p></div>
+      <div><strong>3.53★</strong><p>GECU written-review average; monthly mean fell from 4.89 to 2.27</p></div>
+    </div>
+    <p class="metrics-note">Data as of Oct 2026 · Sources: ACS 2020–24 coverage; NCUA Q2 2026 call reports and CU rate pages; App Store + Google Play written reviews</p>
+  </section>
+
   <div class="layout">
     <article class="prose">
       <p class="note"><b>Key finding.</b> About a third of the area's 2.09 million residents (34.9%) live more than 3 miles from any branch of the six credit unions studied. In app reviews, login and reliability was both the top praise and the top complaint at every one of them.</p>
@@ -72,8 +83,12 @@
       </div>
       <p>That income column is an average of medians, weighted by population. It is not a true median.</p>
       <figure class="chart">
-        <img src="../assets/coverage-share.svg" width="760" height="360" alt="Horizontal bars showing the share of Greater Cincinnati residents within 3 miles of each credit union: Kemba 29.5 percent, GECU 28.4, Cinfed 25.1, Sharefax 18.1, Superior 12.3, Wright-Patt 10.1.">
-        <figcaption>Share of the 2,089,394 residents within 3 straight-line miles of that credit union's counted branches. Overlap is expected. Built Oct 8, 2026.</figcaption>
+        <img src="../assets/coverage-map.webp" width="1400" height="1400" loading="lazy" alt="Map of Greater Cincinnati seven counties showing census tracts shaded by whether residents live within 3 miles of a GECU branch, a competitor credit union, both, or neither. Gap tracts cover 34.9 percent of the 2,089,394 residents. GECU branches marked with stars and dashed 3-mile rings; Kemba, Cinfed, Sharefax, Superior, and Wright-Patt marked with other symbols.">
+        <figcaption>Branch coverage map across 503 tracts. Tract shading: both, GECU only, competitor only, or neither (gap). Data as of Oct 2026 · Source: ACS 2020–24 population, CU location pages checked against NCUA, 3-mile straight-line radius.</figcaption>
+      </figure>
+      <figure class="chart">
+        <img src="../assets/coverage-share.svg" width="760" height="360" loading="lazy" alt="Horizontal bars showing the share of Greater Cincinnati residents within 3 miles of each credit union: Kemba 29.5 percent, GECU 28.4, Cinfed 25.1, Sharefax 18.1, Superior 12.3, Wright-Patt 10.1.">
+        <figcaption>Share of the 2,089,394 residents within 3 straight-line miles of that credit union's counted branches. Overlap is expected. Data as of Oct 2026 · Source: ACS 2020–24, CU branches as of the Oct 8 coverage build.</figcaption>
       </figure>
       <div class="table-wrap">
         <table>
@@ -91,8 +106,8 @@
 
       <p>Written app reviews, same window, stars blended with VADER. Wright-Patt is the 200-review sample. Its uncapped 537 reviews are close: 3.95 stars, 70% positive, 19% negative.</p>
       <figure class="chart">
-        <img src="../assets/sentiment-bar.svg" width="760" height="430" alt="Stacked bar chart of positive, neutral, and negative written reviews. GECU 58, 17, and 25 percent. Kemba 44, 19, and 38. Cinfed 92 and 8. Wright-Patt 73, 10, and 17. Sharefax 18, 12, and 71. Superior 87, 7, and 6.">
-        <figcaption>Share of written reviews, Oct 8, 2025 – Oct 8, 2026. Kemba and Sharefax round to 101%. Superior is system-wide, not Cincinnati-only.</figcaption>
+        <img src="../assets/sentiment-stacked.webp" width="1350" height="750" loading="lazy" alt="Stacked bar chart of positive, neutral, and negative written app reviews for six credit unions. GECU 58 percent positive, 17 neutral, 25 negative, average 3.53 stars from 105 reviews. Kemba 44/19/38 at 2.94 from 16. Cinfed 92/0/8 at 4.58 from 26. Wright-Patt 73/10/17 at 4.03 from a 200-review sample. Sharefax 18/12/71 at 2.0 from 17. Superior 87/7/6 at 4.49 from 82.">
+        <figcaption>Share of written reviews by sentiment. Kemba, Sharefax, and Cinfed samples are small (16 / 17 / 26). Superior is system-wide, not Cincinnati-only. Data as of Oct 2026 · Source: App Store RSS + Google Play, Oct 8, 2025–Oct 8, 2026; stars + VADER.</figcaption>
       </figure>
       <div class="table-wrap">
         <table>
@@ -105,6 +120,12 @@
           <tr><td>Superior</td><td>82 (48 / 34)</td><td>4.49</td><td>87% / 7% / 6%</td></tr>
         </table>
       </div>
+
+      <figure class="chart">
+        <img src="../assets/sentiment-quarterly.webp" width="1400" height="630" loading="lazy" alt="Line chart of average app-review stars by quarter from 2025Q4 to 2026Q4 for six credit unions. GECU falls from 4.5 in 2025Q4 toward 3.0 by 2026Q4. Cinfed stays near 4.1 to 5.0. Kemba and Sharefax stay low with small samples. Superior spikes in 2026Q3.">
+        <figcaption>Average stars by quarter in the written-review sample. Monthly averages for GECU fell from 4.89 (Oct 2025) to 2.27 (Feb 2026) after an app update. Small n for Kemba, Cinfed, and Sharefax. Data as of Oct 2026 · Source: App Store RSS + Google Play written reviews.</figcaption>
+      </figure>
+
       <p>Across all six, no negative review in the window was coded to fees or rates. Login and app reliability was the top praise theme and the top complaint theme at every institution. All-time store ratings sit above the written-review average. GECU's store-wide ratings that day were 4.77 on iOS (7,588 ratings) and 4.35 on Play (2,173), against a written-review average of 3.53.</p>
       <p>Two timing notes, both on small counts. Kemba launched a new platform around Sep 22, 2026. The five Google Play reviews after launch averaged 1.8 stars. The 12 reviews in the 12 months before launch averaged 3.25. Superior's 4.49 is not a steady year: 55 of the 82 reviews are dated Aug 12–13, 2026, and those days averaged 4.8 stars. Without those two days the remaining 27 reviews average 3.85 stars, and the split is 67% positive, 15% neutral, 19% negative.</p>
 
