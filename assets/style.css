@@ -173,6 +173,29 @@ footer { background: var(--white); border-top: 1px solid var(--border); }
 .footer-grid a { display: flex; align-items: center; min-height: 44px; color: var(--navy); font-size: 14px; text-decoration: underline #0000; text-underline-offset: 4px; }
 .footer-grid a:hover { color: var(--steel); text-decoration-color: currentColor; }
 
+
+/* Flagship proof strip on home cards */
+.project-card-flagship { grid-column: 1 / -1; flex-direction: row; align-items: stretch; }
+.project-card-flagship .project-visual { flex: 0 0 340px; height: auto; min-height: 300px; border-bottom: 0; border-right: 1px solid var(--border); }
+.project-card-flagship .project-body { flex: 1; min-width: 0; }
+.project-card-flagship .proof-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 4px 0 22px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--warm-white); overflow: hidden; }
+.project-card-flagship .proof-strip > div { padding: 14px 16px; border-right: 1px solid var(--border); }
+.project-card-flagship .proof-strip > div:last-child { border-right: 0; }
+.project-card-flagship .proof-strip strong { display: block; color: var(--navy); font: 600 18px/1.2 var(--heading); letter-spacing: -.02em; margin-bottom: 4px; }
+.project-card-flagship .proof-strip span { display: block; color: var(--slate); font-size: 13px; line-height: 1.35; }
+@media (width <= 900px) {
+  .project-card-flagship { flex-direction: column; }
+  .project-card-flagship .project-visual { flex-basis: auto; width: 100%; height: 240px; min-height: 0; border-right: 0; border-bottom: 1px solid var(--border); }
+  .project-card-flagship .proof-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-card-flagship .proof-strip > div:nth-child(2) { border-right: 0; }
+  .project-card-flagship .proof-strip > div:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+}
+@media (width <= 420px) {
+  .project-card-flagship .proof-strip { grid-template-columns: 1fr; }
+  .project-card-flagship .proof-strip > div { border-right: 0; border-bottom: 1px solid var(--border); }
+  .project-card-flagship .proof-strip > div:last-child { border-bottom: 0; }
+}
+
 /* Case study pages */
 .case-head { padding: 72px 0 48px; max-width: 860px; }
 .case-head h1 { color: var(--navy); font: 600 clamp(36px, 3.4vw, 44px)/1.15 var(--heading); letter-spacing: -.025em; margin-bottom: 20px; }
